@@ -1,0 +1,32 @@
+!SESSION 2023-06-19 09:31:02.689 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/16.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/16.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-06-19 09:33:15.960
+!MESSAGE Indexed 'lab5' (22 sources, 10 headers) in 6.29 sec: 1,418 declarations; 3,963 references; 39 unresolved inclusions; 2 syntax errors; 97 unresolved names (1.77%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-06-19 09:33:54.856
+!MESSAGE Indexed 'lab5_bsp' (94 sources, 158 headers) in 3.84 sec: 6,431 declarations; 15,955 references; 4 unresolved inclusions; 4 syntax errors; 27 unresolved names (0.12%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-06-19 09:34:44.743
+!MESSAGE Indexed 'lab5' (22 sources, 10 headers) in 2.60 sec: 1,418 declarations; 3,963 references; 39 unresolved inclusions; 2 syntax errors; 97 unresolved names (1.77%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-06-19 09:35:14.456
+!MESSAGE Indexed 'lab5_bsp' (94 sources, 103 headers) in 1.27 sec: 3,075 declarations; 11,382 references; 93 unresolved inclusions; 8 syntax errors; 188 unresolved names (1.28%)
+!SESSION 2023-06-19 09:35:29.573 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.8.0_05
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/16.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/16.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-06-19 09:37:43.130
+!MESSAGE Executing: [C:/intelfpga_lite/16.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --sidp=0x80011c0 --id=0x0 --timestamp=1489109339]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2023-06-19 09:37:45.574
+!MESSAGE Executing: [C:/intelfpga_lite/16.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --sidp=0x80011c0 --id=0x0 --timestamp=1489109339 /cygdrive/c/cpen311/cpen311-lab5/rtl/software/lab5/lab5.elf]
