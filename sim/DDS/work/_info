@@ -1,0 +1,144 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/cpen311/cpen311-lab4/sim/task2/2a
+vDDS
+Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z1 !s110 1687203307
+!i10b 1
+!s100 FSl]T?@R3m09M9bi[gZ>d1
+I>CfPYolUQiIacjI6I@WeQ1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 dds_sv_unit
+S1
+Z3 dC:/cpen311/cpen311-lab5/sim/DDS
+w1687203132
+8C:/cpen311/cpen311-lab5/rtl/our_components/dds/dds.sv
+FC:/cpen311/cpen311-lab5/rtl/our_components/dds/dds.sv
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1687203307.000000
+!s107 C:/cpen311/cpen311-lab5/rtl/our_components/dds/dds.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/cpen311/cpen311-lab5/rtl/our_components/dds/dds.sv|
+!i113 1
+Z6 o-work work -sv
+Z7 tCvgOpt 0
+n@d@d@s
+Esincos_lut
+Z8 w1687190423
+Z9 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z10 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z11 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z12 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R3
+Z13 8C:/cpen311/cpen311-lab5/rtl/sincos_lut.vhd
+Z14 FC:/cpen311/cpen311-lab5/rtl/sincos_lut.vhd
+l0
+L25
+VzLa`J^M^a7?H2FiU4Mhz;3
+!s100 7iWn1leeEa[=VGaM;5>8;2
+Z15 OV;C;10.5b;63
+32
+Z16 !s110 1687203308
+!i10b 1
+Z17 !s108 1687203308.000000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/cpen311/cpen311-lab5/rtl/sincos_lut.vhd|
+Z19 !s107 C:/cpen311/cpen311-lab5/rtl/sincos_lut.vhd|
+!i113 1
+Z20 o-work work -2002 -explicit
+Z21 tExplicit 1 CvgOpt 0
+Artl
+R9
+R10
+R11
+R12
+Z22 DEx4 work 10 sincos_lut 0 22 zLa`J^M^a7?H2FiU4Mhz;3
+Z23 l1080
+L40
+Z24 VT;M@L]f4SP:P3D5e7PiS]3
+Z25 !s100 52VA0:VH7KPd2ZVVHA_440
+R15
+32
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R20
+R21
+vtb_DDS
+R0
+R1
+!i10b 1
+!s100 SU6^6<FOOTZ:45cb<<KH;0
+IB6XFDi_g1Bjn_g2di6JdU1
+R2
+!s105 tb_dds_sv_unit
+S1
+R3
+w1687203304
+8C:/cpen311/cpen311-lab5/sim/DDS/tb_dds.sv
+FC:/cpen311/cpen311-lab5/sim/DDS/tb_dds.sv
+L0 3
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/cpen311/cpen311-lab5/sim/DDS/tb_dds.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/cpen311/cpen311-lab5/sim/DDS/tb_dds.sv|
+!i113 1
+R6
+R7
+ntb_@d@d@s
+Ewaveform_gen
+R8
+R9
+R11
+R12
+R3
+Z26 8C:/cpen311/cpen311-lab5/rtl/waveform_gen.vhd
+Z27 FC:/cpen311/cpen311-lab5/rtl/waveform_gen.vhd
+l0
+L25
+VoT0Qk<UT7HOJ7<PAd>7[S0
+!s100 O9<>HBaTeeZdZYXNFZ;ln1
+R15
+32
+R16
+!i10b 1
+R17
+Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/cpen311/cpen311-lab5/rtl/waveform_gen.vhd|
+Z29 !s107 C:/cpen311/cpen311-lab5/rtl/waveform_gen.vhd|
+!i113 1
+R20
+R21
+Artl
+R9
+R11
+R12
+DEx4 work 12 waveform_gen 0 22 oT0Qk<UT7HOJ7<PAd>7[S0
+l69
+L48
+V8ogCfoTYno=lUBO]OcFl71
+!s100 bkd4_zF_Ql1MhU_RQhGRZ3
+R15
+32
+R16
+!i10b 1
+R17
+R28
+R29
+!i113 1
+R20
+R21
