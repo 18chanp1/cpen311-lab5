@@ -2,11 +2,11 @@ onerror {resume}
 radix define wave {
     "3'b000" "SINE",
     "3'b001" "COSINE",
-    "3'B010" "SQUARE",
-    "3'B011" "SAW",
+    "3'B010" "SAW",
+    "3'B011" "SQUARE",
     "3'B100" "ASK",
-    "3'B101" "BPSK",
-    "3'B110" "FSK",
+    "3'B101" "FSK",
+    "3'B110" "BPSK",
     "3'B111" "QPSK",
     -default default
 }

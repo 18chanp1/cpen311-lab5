@@ -19,18 +19,18 @@ module DDS
     /* Frequencies in Hz */
     parameter FREQ_HI =  5,             /* Frequency for "1" for FSK*/
     parameter FREQ_MID = 3,             /* Frequency for ASK, BPSK, QPSK */ 
-    parameter FREQ_LO = 1,              /* Frequency for "0" for FSK */
+    parameter FREQ_LO =  1,              /* Frequency for "0" for FSK */
     parameter FREQ_CLK = 50_000_000,    /* Sample Frequency, default 50Mhz*/
     
     /* Codes for different outputs */
-    parameter SINE = 3'b000,
-    parameter COSINE = 3'b001,
-    parameter SQUARE = 3'b010,
-    parameter SAW = 3'b011,
-    parameter ASK = 3'b100,
-    parameter BPSK = 3'b101,
-    parameter FSK = 3'b110,
-    parameter QPSK = 3'b111
+    parameter SINE =    3'b000,
+    parameter COSINE =  3'b001,
+    parameter SAW =     3'b010,
+    parameter SQUARE =  3'b011,
+    parameter ASK =     3'b100,
+    parameter FSK =     3'b101,
+    parameter BPSK =    3'b110,
+    parameter QPSK =    3'b111
 )
 (
     input logic clk,
@@ -86,14 +86,14 @@ module DDS
     
     always_comb begin
         case (mode)
-            SINE: wave = sine;
+            SINE:   wave = sine;
             COSINE: wave = cosine;
             SQUARE: wave = square;
-            SAW: wave = saw;
-            ASK: wave = data[0] ? sine : 12'b0;
-            BPSK: wave = data[0] ? ~sine : sine;
-            FSK: wave = sine;
-            QPSK: wave = qpsk_wave[12:1];
+            SAW:    wave = saw;
+            ASK:    wave = data[0] ? sine : 12'b0;
+            BPSK:   wave = data[0] ? ~sine : sine;
+            FSK:    wave = sine;
+            QPSK:   wave = qpsk_wave[12:1];
         endcase
     end
 

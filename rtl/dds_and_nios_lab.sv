@@ -334,6 +334,22 @@ DE1_SoC_QSYS U0(
 (* keep = 1, preserve = 1 *) logic [11:0] actual_selected_modulation;
 (* keep = 1, preserve = 1 *) logic [11:0] actual_selected_signal;
 
+/*Instantiate DDS wrapper*/
+logic [1:0] 		dds_data;
+logic [2:0] 		dds_sel;
+logic signed [11:0] dds_out;
+DDS scope_DDS
+(
+	.clk(CLOCK50),
+	.reset(reset_from_key),
+	.en(1'b1),
+	.data(SW[4:3]), //TODO, replace with LFSR
+	.mode()
+	.wave()
+);
+
+
+
 
 ////////////////////////////////////////////////////////////////////
 // 
