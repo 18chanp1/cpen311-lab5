@@ -10,15 +10,15 @@ cModel Technology
 dC:/cpen311/cpen311-lab4/sim/task2/2a
 vDDS
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 !s110 1687213407
+Z1 !s110 1687214130
 !i10b 1
-!s100 cai[;:fmOEVjeenH;0K[Z2
-I<am`:h7Jd_V_VJ261FMz[0
+!s100 fSakCP?4OW2aWLnzB1LEi3
+I0D=0c::GX`G[OLgX1fXCA3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 !s105 dds_sv_unit
 S1
 Z3 dC:/cpen311/cpen311-lab5/sim/DDS
-w1687213401
+w1687214078
 8C:/cpen311/cpen311-lab5/rtl/our_components/dds/dds.sv
 FC:/cpen311/cpen311-lab5/rtl/our_components/dds/dds.sv
 L0 17
@@ -26,7 +26,7 @@ Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1687213407.000000
+Z5 !s108 1687214130.000000
 !s107 C:/cpen311/cpen311-lab5/rtl/our_components/dds/dds.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/cpen311/cpen311-lab5/rtl/our_components/dds/dds.sv|
 !i113 1
@@ -48,45 +48,45 @@ VzLa`J^M^a7?H2FiU4Mhz;3
 !s100 7iWn1leeEa[=VGaM;5>8;2
 Z15 OV;C;10.5b;63
 32
-R1
+Z16 !s110 1687214131
 !i10b 1
-R5
-Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/cpen311/cpen311-lab5/rtl/sincos_lut.vhd|
-Z17 !s107 C:/cpen311/cpen311-lab5/rtl/sincos_lut.vhd|
+Z17 !s108 1687214131.000000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/cpen311/cpen311-lab5/rtl/sincos_lut.vhd|
+Z19 !s107 C:/cpen311/cpen311-lab5/rtl/sincos_lut.vhd|
 !i113 1
-Z18 o-work work -2002 -explicit
-Z19 tExplicit 1 CvgOpt 0
+Z20 o-work work -2002 -explicit
+Z21 tExplicit 1 CvgOpt 0
 Artl
 R9
 R10
 R11
 R12
-Z20 DEx4 work 10 sincos_lut 0 22 zLa`J^M^a7?H2FiU4Mhz;3
-Z21 l1080
+Z22 DEx4 work 10 sincos_lut 0 22 zLa`J^M^a7?H2FiU4Mhz;3
+Z23 l1080
 L40
-Z22 VT;M@L]f4SP:P3D5e7PiS]3
-Z23 !s100 52VA0:VH7KPd2ZVVHA_440
+Z24 VT;M@L]f4SP:P3D5e7PiS]3
+Z25 !s100 52VA0:VH7KPd2ZVVHA_440
 R15
 32
-R1
-!i10b 1
-R5
 R16
+!i10b 1
 R17
-!i113 1
 R18
 R19
+!i113 1
+R20
+R21
 vtb_DDS
 R0
 R1
 !i10b 1
-!s100 72z[8OTW9<3RQKBbWLRO[1
-IEhc0MZaIJeHf08hA;UO831
+!s100 0FDM^Iz@X:g^<D`eXLIN[0
+IS;I3MAUahPLohVhgZS>7F2
 R2
 !s105 tb_dds_sv_unit
 S1
 R3
-w1687212314
+w1687214124
 8C:/cpen311/cpen311-lab5/sim/DDS/tb_dds.sv
 FC:/cpen311/cpen311-lab5/sim/DDS/tb_dds.sv
 L0 3
@@ -107,22 +107,22 @@ R9
 R11
 R12
 R3
-Z24 8C:/cpen311/cpen311-lab5/rtl/waveform_gen.vhd
-Z25 FC:/cpen311/cpen311-lab5/rtl/waveform_gen.vhd
+Z26 8C:/cpen311/cpen311-lab5/rtl/waveform_gen.vhd
+Z27 FC:/cpen311/cpen311-lab5/rtl/waveform_gen.vhd
 l0
 L25
 VoT0Qk<UT7HOJ7<PAd>7[S0
 !s100 O9<>HBaTeeZdZYXNFZ;ln1
 R15
 32
-R1
+R16
 !i10b 1
-R5
-Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/cpen311/cpen311-lab5/rtl/waveform_gen.vhd|
-Z27 !s107 C:/cpen311/cpen311-lab5/rtl/waveform_gen.vhd|
+R17
+Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/cpen311/cpen311-lab5/rtl/waveform_gen.vhd|
+Z29 !s107 C:/cpen311/cpen311-lab5/rtl/waveform_gen.vhd|
 !i113 1
-R18
-R19
+R20
+R21
 Artl
 R9
 R11
@@ -134,11 +134,11 @@ V8ogCfoTYno=lUBO]OcFl71
 !s100 bkd4_zF_Ql1MhU_RQhGRZ3
 R15
 32
-R1
+R16
 !i10b 1
-R5
-R26
-R27
+R17
+R28
+R29
 !i113 1
-R18
-R19
+R20
+R21

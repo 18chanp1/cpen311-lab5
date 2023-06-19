@@ -68,54 +68,6 @@ module tb_DDS ();
         testop(QPSK, 3);
 
         $stop;
-
-        mode = COSINE;
-
-        #400; 
-
-        mode = SQUARE;
-
-        #400;
-
-        mode = SAW;
-
-        #400;
-
-        mode = ASK;
-        data = 2'b01;
-        #200
-        data = 2'b00;
-        #200;
-
-        mode = BPSK;
-        data = 2'b00;
-        #200;
-        data = 2'b01;
-        #200
-
-        mode = BPSK;
-        data = 2'b00;
-        #200;
-        data = 2'b01;
-        #200
-
-        mode = FSK;
-        data = 2'b00;
-        #200;
-        data = 2'b01;
-        #200
-
-        mode = QPSK;
-        data = 2'b00;
-        #200;
-        data = 2'b01;
-        #200
-        data = 2'b10;
-        #200;
-        data = 2'b11;
-        #200
-
-        $stop;
     end
 
 endmodule
