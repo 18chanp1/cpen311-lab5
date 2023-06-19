@@ -1,12 +1,28 @@
+/*
+A wrapper that wraps a DDS waveform_gen module 
+to provide different waves, given some input data, 
+and mode selection.
+
+Uses sine as a carrier wave. 
+
+BPSK -  data[0] => sine (phase shift = 0)
+       !data[0] => ~sine (phase shift = 180)
+
+QPSK - data = 00 => sine + cosine (phase shift = 315)
+       data = 01 => sine - cosine (phase shift = 45)
+       data = 10 => -sine + cosine (phase shift = 225)
+       data = 11 => -sine - cosine (phase shift = 135)
+*/
+
 module DDS
 #(
+    /* Frequencies in Hz */
+    parameter FREQ_HI =  5,             /* Frequency for "1" for FSK*/
+    parameter FREQ_MID = 3,             /* Frequency for ASK, BPSK, QPSK */ 
+    parameter FREQ_LO = 1,              /* Frequency for "0" for FSK */
+    parameter FREQ_CLK = 50_000_000,    /* Sample Frequency, default 50Mhz*/
     
-    parameter FREQ_HI =  5, /* Frequency for "1" for FSK */
-    parameter FREQ_MID = 3,  /* Frequency for ASK, BPSK, QPSK */ 
-    parameter FREQ_LO = 1,  /* Frequency for "0" for FSK */
-    /* Sample Frequency */
-    parameter FREQ_CLK = 50_000_000,
-    
+    /* Codes for different outputs */
     parameter SINE = 3'b000,
     parameter COSINE = 3'b001,
     parameter SQUARE = 3'b010,
@@ -17,15 +33,16 @@ module DDS
     parameter QPSK = 3'b111
 )
 (
-    input logic clk, /* 50 Mhz */
+    input logic clk,
     input logic rst, 
     input logic en,
-    /*1 bit input for FSK/ASK/BPSK, 2 bits for QPSK*/
+    /*data[0] for FSK/ASK/BPSK,  data[1:0] for QPSK*/
     input logic [1:0] data,
     input logic [2:0] mode,
     output logic signed [11:0] wave
 );
 
+    /* Calculate phase_inc for various frequencies*/
     localparam [64:0] PHASE_INC_LO = (FREQ_LO * (2**32)) / FREQ_CLK;
     localparam [64:0] PHASE_INC_MID = ((FREQ_MID * (2**32)) / FREQ_CLK);
     localparam [64:0] PHASE_INC_HI = ((FREQ_HI * (2**32)) / FREQ_CLK);
@@ -44,6 +61,7 @@ module DDS
         .saw_out(saw)
     );
 
+    /* Choose phase_inc depending on mode, and data for FSK*/
     always_comb begin
         if (mode == FSK)
         begin
@@ -55,7 +73,7 @@ module DDS
         end
     end 
 
-
+    /* Select output encoding based on mode and data */
     always_comb begin
         case (mode)
             SINE: wave = sine;
