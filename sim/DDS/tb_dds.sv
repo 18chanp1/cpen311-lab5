@@ -16,7 +16,9 @@ module tb_DDS ();
     parameter FSK = 3'b110;
     parameter QPSK = 3'b111;
 
-    DDS #(.FREQ_CLK(200)) DUT 
+    parameter CYCLE = 900;
+
+    DDS #(.FREQ_CLK(300)) DUT 
     (
         .clk(clk),
         .rst(rst),
@@ -35,6 +37,12 @@ module tb_DDS ();
         end
     end
 
+    task testop(int operation, int inp);
+        mode = operation;
+        data = inp;
+        #CYCLE;
+    endtask
+
     initial begin 
         en = 1'b1;
         rst = 1'b1;
@@ -43,8 +51,23 @@ module tb_DDS ();
 
         #2;
         rst = 1'b0;
+        #2;
 
-        #400;
+        testop(SINE, 0);
+        testop(SQUARE, 0);
+        testop (SAW, 0);
+        testop (ASK, 0);
+        testop (ASK, 1);
+        testop (BPSK, 0);
+        testop (BPSK, 1);
+        testop (FSK, 0);
+        testop (FSK, 1);
+        testop (QPSK, 0);
+        testop (QPSK, 1);
+        testop(QPSK, 2);
+        testop(QPSK, 3);
+
+        $stop;
 
         mode = COSINE;
 

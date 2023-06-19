@@ -43,7 +43,7 @@ module DDS
 );
 
     /* Calculate phase_inc for various frequencies*/
-    localparam [64:0] PHASE_INC_LO = (FREQ_LO * (2**32)) / FREQ_CLK;
+    localparam [64:0] PHASE_INC_LO = ((FREQ_LO * (2**32)) / FREQ_CLK);
     localparam [64:0] PHASE_INC_MID = ((FREQ_MID * (2**32)) / FREQ_CLK);
     localparam [64:0] PHASE_INC_HI = ((FREQ_HI * (2**32)) / FREQ_CLK);
 
@@ -74,6 +74,16 @@ module DDS
     end 
 
     /* Select output encoding based on mode and data */
+    logic signed [12:0] qpsk_wave;
+    always_comb begin
+        case(data[1:0])
+            2'b00: qpsk_wave = (sine + cosine);
+            2'b01: qpsk_wave = (sine + ~cosine);
+            2'b10: qpsk_wave = (~sine + cosine);
+            2'b11: qpsk_wave = (~sine + ~cosine);
+        endcase
+    end
+    
     always_comb begin
         case (mode)
             SINE: wave = sine;
@@ -83,15 +93,9 @@ module DDS
             ASK: wave = data[0] ? sine : 12'b0;
             BPSK: wave = data[0] ? ~sine : sine;
             FSK: wave = sine;
-            QPSK:
-            begin
-                case(data[1:0])
-                    2'b00: wave = (sine + cosine);
-                    2'b01: wave = (sine + ~cosine);
-                    2'b10: wave = (~sine + cosine);
-                    2'b11: wave = (~sine + ~cosine);
-                endcase
-            end
+            QPSK: wave = qpsk_wave[12:1];
         endcase
     end
+
+    
 endmodule
