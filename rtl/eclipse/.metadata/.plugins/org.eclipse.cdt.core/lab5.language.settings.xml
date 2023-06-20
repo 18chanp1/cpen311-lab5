@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project>
-	<configuration id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1953674931" name="Nios II">
+	<configuration id="preference.org.eclipse.cdt.managedbuilder.core.configurationDataProvider.1343722353" name="Nios II">
 		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
 			<provider id="altera.tool.Nios2GCCBuiltinSpecsDetector">
 				<language id="org.eclipse.cdt.core.gcc">
@@ -1412,7 +1412,58 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_printf.c">
+					<resource project-relative-path="drivers/src/altera_avalon_jtag_uart_ioctl.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
+					<resource project-relative-path="drivers/src/altera_avalon_timer_vars.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
+					<resource project-relative-path="hello_ucosii.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_ioctl.c">
 						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1446,7 +1497,75 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
+					<resource project-relative-path="HAL/src/alt_fcntl.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
 					<resource project-relative-path="drivers/src/altera_avalon_jtag_uart_read.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
+					<resource project-relative-path="drivers/src/altera_avalon_timer_ts.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_instruction_exception_entry.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
+					<resource project-relative-path="UCOSII/src/alt_env_lock.c">
 						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1565,7 +1684,7 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_dev_llist_insert.c">
+					<resource project-relative-path="HAL/src/alt_fd_unlock.c">
 						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1582,24 +1701,7 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_log_printf.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_environ.c">
+					<resource project-relative-path="UCOSII/src/os_q.c">
 						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1633,7 +1735,58 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
+					<resource project-relative-path="UCOSII/src/os_dbg.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_remap_cached.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
 					<resource project-relative-path="HAL/src/alt_remap_uncached.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
+					<resource project-relative-path="drivers/drivers.c">
 						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1667,7 +1820,58 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
+					<resource project-relative-path="HAL/src/alt_dcache_flush_all.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
 					<resource project-relative-path="graphic_lib/simple_text.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_exit.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_icache_flush_all.c">
 						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1752,7 +1956,7 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_putchar.c">
+					<resource project-relative-path="UCOSII/src/alt_malloc_lock.c">
 						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1769,7 +1973,24 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_link.c">
+					<resource project-relative-path="HAL/src/alt_tick.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_close.c">
 						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1787,6 +2008,40 @@
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
 					<resource project-relative-path="HAL/src/alt_io_redirect.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_irq_handler.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_write.c">
 						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1837,7 +2092,7 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_ecc_fatal_exception.c">
+					<resource project-relative-path="HAL/src/alt_iic.c">
 						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1854,7 +2109,7 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_fork.c">
+					<resource project-relative-path="HAL/src/alt_ecc_fatal_exception.c">
 						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -1889,23 +2144,6 @@
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
 					<resource project-relative-path="HAL/src/alt_dma_rxchan_open.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_settod.c">
 						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -2007,6 +2245,23 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
+					<resource project-relative-path="UCOSII/src/os_core.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
 					<resource project-relative-path="HAL/src/alt_busy_sleep.c">
 						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
@@ -2024,7 +2279,7 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_getchar.c">
+					<resource project-relative-path="HAL/src/alt_fstat.c">
 						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -2092,6 +2347,57 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
+					<resource project-relative-path="HAL/src/alt_flash_dev.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
+					<resource project-relative-path="UCOSII/src/os_mem.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_instruction_exception_register.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
 					<resource project-relative-path="vip_fr.c">
 						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
@@ -2126,7 +2432,7 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_gettod.c">
+					<resource project-relative-path="HAL/src/alt_find_dev.c">
 						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -2161,6 +2467,40 @@
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
 					<resource project-relative-path="HAL/src/alt_isatty.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_lseek.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
+					<resource project-relative-path="UCOSII/src/os_mutex.c">
 						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -2245,754 +2585,6 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_unlink.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_putstr.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_times.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="UCOSII/src/os_time.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_kill.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_iic_isr_register.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_irq_vars.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_wait.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="drivers/src/altera_avalon_jtag_uart_ioctl.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="drivers/src/altera_avalon_timer_vars.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="hello_ucosii.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_ioctl.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_fcntl.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="drivers/src/altera_avalon_timer_ts.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_instruction_exception_entry.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="UCOSII/src/alt_env_lock.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_fd_unlock.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="UCOSII/src/os_q.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_execve.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="UCOSII/src/os_dbg.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_remap_cached.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="drivers/drivers.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_stat.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_dcache_flush_all.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_errno.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_exit.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_icache_flush_all.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="UCOSII/src/alt_malloc_lock.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_tick.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_close.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_irq_handler.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_write.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_iic.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="UCOSII/src/os_core.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_fstat.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_do_ctors.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_rename.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_flash_dev.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="UCOSII/src/os_mem.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_instruction_exception_register.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_find_dev.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_lseek.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="UCOSII/src/os_mutex.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="frame.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
 					<resource project-relative-path="HAL/src/altera_nios2_qsys_irq.c">
 						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
@@ -3027,41 +2619,7 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
-					<resource project-relative-path="HAL/src/alt_do_dtors.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_getpid.c">
-						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
-							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
-						</entry>
-						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
-						<entry kind="macro" name="__hal__" value=""/>
-						<entry kind="macro" name="__ucosii__" value=""/>
-					</resource>
-					<resource project-relative-path="HAL/src/alt_load.c">
+					<resource project-relative-path="UCOSII/src/os_time.c">
 						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
@@ -3095,7 +2653,41 @@
 						<entry kind="macro" name="__hal__" value=""/>
 						<entry kind="macro" name="__ucosii__" value=""/>
 					</resource>
+					<resource project-relative-path="HAL/src/alt_iic_isr_register.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
 					<resource project-relative-path="HAL/src/alt_gmon.c">
+						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/HAL/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="includePath" name="/lab5_bsp/drivers/inc">
+							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
+						</entry>
+						<entry kind="macro" name="ALT_NO_INSTRUCTION_EMULATION" value=""/>
+						<entry kind="macro" name="__hal__" value=""/>
+						<entry kind="macro" name="__ucosii__" value=""/>
+					</resource>
+					<resource project-relative-path="HAL/src/alt_irq_vars.c">
 						<entry kind="includePath" name="/lab5_bsp/UCOSII/inc">
 							<flag value="VALUE_WORKSPACE_PATH|RESOLVED"/>
 						</entry>
