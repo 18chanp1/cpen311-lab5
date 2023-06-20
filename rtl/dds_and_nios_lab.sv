@@ -334,18 +334,64 @@ DE1_SoC_QSYS U0(
 (* keep = 1, preserve = 1 *) logic [11:0] actual_selected_modulation;
 (* keep = 1, preserve = 1 *) logic [11:0] actual_selected_signal;
 
-/*Instantiate DDS wrapper*/
-logic [1:0] 		dds_data;
-logic [2:0] 		dds_sel;
-logic signed [11:0] dds_out;
-DDS scope_DDS
+/*Instantiate DDS wrapper for top (modulated)*/
+logic [1:0] 		dds_top_data;
+logic [1:0] 		dds_top_sel;
+logic signed [11:0] dds_top_out;
+DDS scope_DDS_top
 (
-	.clk(CLOCK50),
-	.reset(reset_from_key),
+	.clk(CLOCK_50),
+	.rst(reset_from_key),
 	.en(1'b1),
 	.data(SW[4:3]), //TODO, replace with LFSR
-	.mode()
-	.wave()
+	.mode({1'b1, dds_top_sel}),
+	.wave(dds_top_out)
+);
+
+/* Synchronize signals to/from top (modulated) */
+fts_sync #(.N(12)) dds_top_out_syncro
+(
+	.data(dds_top_out),
+	.synced(actual_selected_modulation),
+	.fastclk(CLOCK_50),
+	.slowclk(sampler)
+);
+stf_sync #(.N(2)) dds_top_sel_syncro
+(
+	.data(modulation_selector[1:0]),
+	.synced(dds_top_sel),
+	.fastclk(CLOCK_50),
+	.slowclk(sampler)
+);
+
+/*Instantiate DDS wrapper for bottom (raw)*/
+logic [1:0] 		dds_bot_data;
+logic [1:0] 		dds_bot_sel;
+logic signed [11:0] dds_bot_out;
+DDS scope_DDS_bot
+(
+	.clk(CLOCK_50),
+	.rst(reset_from_key),
+	.en(1'b1),
+	.data(2'b00),
+	.mode({1'b0, dds_bot_sel}),
+	.wave(dds_bot_out)
+);
+
+/* Synchronize signals to/from bottom (raw) */
+fts_sync #(.N(12)) dds_bot_out_syncro
+(
+	.data(dds_bot_out),
+	.synced(actual_selected_signal),
+	.fastclk(CLOCK_50),
+	.slowclk(sampler)
+);
+stf_sync #(.N(2)) dds_bot_sel_syncro
+(
+	.data(signal_selector[1:0]),
+	.synced(dds_bot_sel),
+	.fastclk(CLOCK_50),
+	.slowclk(sampler)
 );
 
 
