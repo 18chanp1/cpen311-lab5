@@ -2,11 +2,11 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>ucosii</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Mar 9, 2017 5:36:40 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1489109800798</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>.</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>Jun 19, 2023 7:28:29 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1687228109905</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>C:\cpen311\cpen311-lab5\rtl\software\lab5_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
-        <SopcDesignFile>../../DE1_SoC_QSYS.sopcinfo</SopcDesignFile>
+        <SopcDesignFile>..\..\DE1_SoC_QSYS.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>cpu</Cpu>
         <SchemaVersion>1.9</SchemaVersion>
@@ -72,19 +72,19 @@
         </Setting>
         <Setting>
                 <SettingName>hal.linker.enable_alt_load</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>1</Value>
                 <DefaultValue>0</DefaultValue>
                 <DestinationFile>none</DestinationFile>
-                <Description>Enables the alt_load() facility. The alt_load() facility copies sections from the .text memory into RAM. If true, this setting sets up the VMA/LMA of sections in linker.x to allow them to be loaded into the .text memory.</Description>
+                <Description>Enables the alt_load() facility. The alt_load() facility copies data sections (.rodata, .rwdata, or .exceptions) from boot memory to RAM. If true, this setting sets up the VMA/LMA of sections in linker.x to allow them to be loaded into the .text memory.</Description>
                 <Restrictions>This setting is typically false if an external bootloader (e.g. flash bootloader) is present.</Restrictions>
                 <Enabled>false</Enabled>
                 <Group xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
         </Setting>
         <Setting>
                 <SettingName>hal.linker.enable_alt_load_copy_rodata</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -96,7 +96,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.linker.enable_alt_load_copy_rwdata</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>1</Value>
                 <DefaultValue>0</DefaultValue>
@@ -108,7 +108,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.linker.enable_alt_load_copy_exceptions</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -120,7 +120,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.linker.enable_exception_stack</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -132,7 +132,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.linker.exception_stack_size</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>DecimalNumber</Type>
                 <Value>1024</Value>
                 <DefaultValue>1024</DefaultValue>
@@ -144,7 +144,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.linker.exception_stack_memory_region_name</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>UnquotedString</Type>
                 <Value>sdram</Value>
                 <DefaultValue>none</DefaultValue>
@@ -156,7 +156,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.linker.enable_interrupt_stack</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -168,7 +168,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.linker.interrupt_stack_size</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>DecimalNumber</Type>
                 <Value>1024</Value>
                 <DefaultValue>1024</DefaultValue>
@@ -180,7 +180,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.linker.interrupt_stack_memory_region_name</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>UnquotedString</Type>
                 <Value>sdram</Value>
                 <DefaultValue>none</DefaultValue>
@@ -192,7 +192,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.stdin</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>UnquotedString</Type>
                 <Value>jtag_uart</Value>
                 <DefaultValue>none</DefaultValue>
@@ -204,7 +204,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.stdout</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>UnquotedString</Type>
                 <Value>jtag_uart</Value>
                 <DefaultValue>none</DefaultValue>
@@ -216,7 +216,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.stderr</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>UnquotedString</Type>
                 <Value>jtag_uart</Value>
                 <DefaultValue>none</DefaultValue>
@@ -228,7 +228,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.log_port</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>UnquotedString</Type>
                 <Value>none</Value>
                 <DefaultValue>none</DefaultValue>
@@ -539,8 +539,20 @@
                 <Group>none</Group>
         </Setting>
         <Setting>
+                <SettingName>hal.make.cflags_mgpopt</SettingName>
+                <Identifier>CFLAGS_MGPOPT</Identifier>
+                <Type>UnquotedString</Type>
+                <Value>-mgpopt=global</Value>
+                <DefaultValue>-mgpopt=global</DefaultValue>
+                <DestinationFile>public_mk_define</DestinationFile>
+                <Description>C/C++ compiler to generate (do not generate) GP-relative accesses. 'none' tells the compilter not to generate GP-relative accesses. 'local' will generate GP-relative accesses for small data objects that are not external, weak, or uninitialized common symbols. Also use GP-relative addressing for objects that have been explicitly placed in a small data section via a section attribute. provides the default set of debug symbols typically required to debug a typical application. 'global' is same as 'local' but also generate GP-relative accesses for small data objects that are external, weak, or common.</Description>
+                <Restrictions>none</Restrictions>
+                <Enabled>false</Enabled>
+                <Group>common</Group>
+        </Setting>
+        <Setting>
                 <SettingName>hal.make.ignore_system_derived.sopc_system_id</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -552,7 +564,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.sopc_system_timestamp</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -564,7 +576,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.sopc_system_base_address</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -576,7 +588,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.sopc_simulation_enabled</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -588,7 +600,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.fpu_present</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -600,7 +612,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.cdx_present</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -612,7 +624,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.bmx_present</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -624,7 +636,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.hardware_multiplier_present</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -636,7 +648,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.hardware_mulx_present</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -648,7 +660,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.hardware_divide_present</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -660,7 +672,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.debug_core_present</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -672,7 +684,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.big_endian</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -684,7 +696,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.hardware_fp_cust_inst_divider_present</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -696,7 +708,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.make.ignore_system_derived.hardware_fp_cust_inst_no_divider_present</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -720,7 +732,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.enable_small_c_library</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>0</Value>
                 <DefaultValue>0</DefaultValue>
@@ -828,7 +840,7 @@
         </Setting>
         <Setting>
                 <SettingName>hal.enable_sopc_sysid_check</SettingName>
-                <Identifier>NONE</Identifier>
+                <Identifier>none</Identifier>
                 <Type>Boolean</Type>
                 <Value>1</Value>
                 <DefaultValue>1</DefaultValue>
@@ -1745,110 +1757,128 @@
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>audio_WRREQ</slaveDescriptor>
+                <slaveDescriptor>dds_increment</slaveDescriptor>
+                <addressRange>0x080010A0 - 0x080010AF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>lfsr_val</slaveDescriptor>
+                <addressRange>0x080010B0 - 0x080010BF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>lfsr_clk_interrupt_gen</slaveDescriptor>
                 <addressRange>0x080010C0 - 0x080010CF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>audio_WRCLK</slaveDescriptor>
+                <slaveDescriptor>audio_WRREQ</slaveDescriptor>
                 <addressRange>0x080010D0 - 0x080010DF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>audio_sel</slaveDescriptor>
+                <slaveDescriptor>audio_WRCLK</slaveDescriptor>
                 <addressRange>0x080010E0 - 0x080010EF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>div_freq</slaveDescriptor>
+                <slaveDescriptor>audio_sel</slaveDescriptor>
                 <addressRange>0x080010F0 - 0x080010FF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>mouse_pos</slaveDescriptor>
+                <slaveDescriptor>div_freq</slaveDescriptor>
                 <addressRange>0x08001100 - 0x0800110F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>keyboard_keys</slaveDescriptor>
+                <slaveDescriptor>mouse_pos</slaveDescriptor>
                 <addressRange>0x08001110 - 0x0800111F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>modulation_selector</slaveDescriptor>
+                <slaveDescriptor>keyboard_keys</slaveDescriptor>
                 <addressRange>0x08001120 - 0x0800112F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>signal_selector</slaveDescriptor>
+                <slaveDescriptor>modulation_selector</slaveDescriptor>
                 <addressRange>0x08001130 - 0x0800113F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>key</slaveDescriptor>
+                <slaveDescriptor>signal_selector</slaveDescriptor>
                 <addressRange>0x08001140 - 0x0800114F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>audio_OUT_STOP</slaveDescriptor>
+                <slaveDescriptor>key</slaveDescriptor>
                 <addressRange>0x08001150 - 0x0800115F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>audio_OUT_PAUSE</slaveDescriptor>
+                <slaveDescriptor>audio_OUT_STOP</slaveDescriptor>
                 <addressRange>0x08001160 - 0x0800116F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>audio_OUT_DATA_AUDIO</slaveDescriptor>
+                <slaveDescriptor>audio_OUT_PAUSE</slaveDescriptor>
                 <addressRange>0x08001170 - 0x0800117F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>audio_fifo_used</slaveDescriptor>
+                <slaveDescriptor>audio_OUT_DATA_AUDIO</slaveDescriptor>
                 <addressRange>0x08001180 - 0x0800118F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>audio_FIFO_FULL</slaveDescriptor>
+                <slaveDescriptor>audio_fifo_used</slaveDescriptor>
                 <addressRange>0x08001190 - 0x0800119F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>audio_EMPTY</slaveDescriptor>
+                <slaveDescriptor>audio_FIFO_FULL</slaveDescriptor>
                 <addressRange>0x080011A0 - 0x080011AF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>audio_DATA_FREGEN</slaveDescriptor>
+                <slaveDescriptor>audio_EMPTY</slaveDescriptor>
                 <addressRange>0x080011B0 - 0x080011BF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>audio_DATA_FREGEN</slaveDescriptor>
+                <addressRange>0x080011C0 - 0x080011CF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>sysid_qsys</slaveDescriptor>
-                <addressRange>0x080011C0 - 0x080011C7</addressRange>
+                <addressRange>0x080011D0 - 0x080011D7</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag_uart</slaveDescriptor>
-                <addressRange>0x080011C8 - 0x080011CF</addressRange>
+                <addressRange>0x080011D8 - 0x080011DF</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

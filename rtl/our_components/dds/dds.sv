@@ -39,13 +39,12 @@ module DDS
     /*data[0] for FSK/ASK/BPSK,  data[1:0] for QPSK*/
     input logic [1:0] data,
     input logic [2:0] mode,
+    input logic [31:0] fsk_phase_inc,
     output logic signed [11:0] wave
 );
 
     /* Calculate phase_inc for various frequencies*/
-    localparam [64:0] PHASE_INC_LO = ((FREQ_LO * (2**32)) / FREQ_CLK);
     localparam [64:0] PHASE_INC_MID = ((FREQ_MID * (2**32)) / FREQ_CLK);
-    localparam [64:0] PHASE_INC_HI = ((FREQ_HI * (2**32)) / FREQ_CLK);
 
     logic [31:0] phase_inc;
     logic signed [11:0] sine, cosine, square, saw;
@@ -62,16 +61,7 @@ module DDS
     );
 
     /* Choose phase_inc depending on mode, and data for FSK*/
-    always_comb begin
-        if (mode == FSK)
-        begin
-            phase_inc = data[0] ? PHASE_INC_HI : PHASE_INC_LO;
-        end
-        else
-        begin
-            phase_inc = PHASE_INC_MID;
-        end
-    end 
+    assign phase_inc = (mode == FSK) ? fsk_phase_inc : PHASE_INC_MID;
 
     /* Select output encoding based on mode and data */
     logic signed [12:0] qpsk_wave;

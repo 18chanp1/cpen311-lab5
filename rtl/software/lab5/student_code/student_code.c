@@ -11,6 +11,9 @@
 #include "student_code.h"
 #include "altera_avalon_pio_regs.h"
 
+#define TUNING_WORD_HI 430
+#define TUNING_WORD_LO 86
+
 #ifdef ALT_ENHANCED_INTERRUPT_API_PRESENT
 void handle_lfsr_interrupts(void* context)
 #else
@@ -20,6 +23,28 @@ void handle_lfsr_interrupts(void* context, alt_u32 id)
 	#ifdef LFSR_VAL_BASE
 	#ifdef LFSR_CLK_INTERRUPT_GEN_BASE
 	#ifdef DDS_INCREMENT_BASE
+
+	volatile int* edge_capture_ptr = (volatile int *) context;
+
+	*edge_capture_ptr = 
+	IORD_ALTERA_AVALON_PIO_EDGE_CAP(LFSR_CLK_INTERRUPT_GEN_BASE);
+
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(LFSR_CLK_INTERRUPT_GEN_BASE, 0);
+
+	IORD_ALTERA_AVALON_PIO_EDGE_CAP(LFSR_CLK_INTERRUPT_GEN_BASE);
+
+	int lfsr_value;
+	lfsr_value = IORD_ALTERA_AVALON_PIO_DATA(LFSR_VAL_BASE);
+	lfsr_value = lfsr_value & 1;
+
+	if(lfsr_value != 0)
+	{
+		IOWR_ALTERA_AVALON_PIO_DATA(DDS_INCREMENT_BASE, TUNING_WORD_HI);
+	} else 
+	{
+		IOWR_ALTERA_AVALON_PIO_DATA(DDS_INCREMENT_BASE, TUNING_WORD_LO);
+	}
+
 	
 	#endif
 	#endif

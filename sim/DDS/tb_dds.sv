@@ -6,14 +6,15 @@ module tb_DDS ();
     logic [1:0] data;
     logic [2:0] mode;
     logic signed [11:0] wave;
+    logic [31:0] fsk_phase_inc;
 
     parameter SINE = 3'b000;
     parameter COSINE = 3'b001;
-    parameter SQUARE = 3'b010;
-    parameter SAW = 3'b011;
+    parameter SAW = 3'b010;
+    parameter SQUARE = 3'b011;
     parameter ASK = 3'b100;
-    parameter BPSK = 3'b101;
-    parameter FSK = 3'b110;
+    parameter FSK = 3'b101;
+    parameter BPSK = 3'b110;
     parameter QPSK = 3'b111;
 
     parameter CYCLE = 900;
@@ -25,7 +26,8 @@ module tb_DDS ();
         .en(en),
         .data(data),
         .mode(mode),
-        .wave(wave)
+        .wave(wave),
+        .fsk_phase_inc(fsk_phase_inc)
     );
 
     initial begin
@@ -38,6 +40,12 @@ module tb_DDS ();
     end
 
     task testop(int operation, int inp);
+        if(operation == FSK)
+        begin
+            fsk_phase_inc = inp ? 71582789 : 14316558;
+        end
+        else fsk_phase_inc = 32'dx;
+
         mode = operation;
         data = inp;
         #CYCLE;
@@ -54,6 +62,7 @@ module tb_DDS ();
         #2;
 
         testop(SINE, 0);
+        testop(COSINE, 0);
         testop(SQUARE, 0);
         testop (SAW, 0);
         testop (ASK, 0);

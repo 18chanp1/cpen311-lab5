@@ -319,8 +319,16 @@ DE1_SoC_QSYS U0(
 	   .audio_sel_export                              (audio_selector),                               //                       audio_sel.export
 	   
        .vga_vga_clk_clk                               (video_clk_40Mhz),                               //                     vga_vga_clk.clk
-       .clk_25_out_clk                                (CLK_25MHZ)                                 //                      clk_25_out.clk
+       .clk_25_out_clk                                (CLK_25MHZ),                                 //                      clk_25_out.clk
        
+	   //FSK Interrupt wires TODO
+	//    .lfsr_clk_interrupt_gen_in_export(lfsr_clk),
+	//    .lfsr_val_in_export({{27{1'b0}},LFSR}),
+	//    .dds_increment_out_export(dds_increment)
+
+	   .lfsr_clk_interrupt_gen_in_export(~KEY[3]),
+	   .lfsr_val_in_export({{31{1'B0}}, SW[3]}),
+	   .dds_increment_out_export(dds_increment)
 	);
 	
  
@@ -345,7 +353,8 @@ DDS scope_DDS_top
 	.en(1'b1),
 	.data(SW[4:3]), //TODO, replace with LFSR
 	.mode({1'b1, dds_top_sel}),
-	.wave(dds_top_out)
+	.fsk_phase_inc(dds_increment),
+	.wave(dds_top_out),
 );
 
 /* Synchronize signals to/from top (modulated) */
@@ -374,6 +383,7 @@ DDS scope_DDS_bot
 	.rst(reset_from_key),
 	.en(1'b1),
 	.data(2'b00),
+	.fsk_phase_inc(32'bx),
 	.mode({1'b0, dds_bot_sel}),
 	.wave(dds_bot_out)
 );

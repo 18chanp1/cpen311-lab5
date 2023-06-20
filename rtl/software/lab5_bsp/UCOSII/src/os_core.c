@@ -616,16 +616,10 @@ void  OSInit (void)
 
 void  OSIntEnter (void)
 {
-#if OS_CRITICAL_METHOD == 3                                /* Allocate storage for CPU status register */
-    OS_CPU_SR  cpu_sr = 0;
-#endif
-
     if (OSRunning == OS_TRUE) {
-        OS_ENTER_CRITICAL();
         if (OSIntNesting < 255u) {
             OSIntNesting++;                      /* Increment ISR nesting level                        */
         }
-        OS_EXIT_CRITICAL();
     }
 }
 /*$PAGE*/

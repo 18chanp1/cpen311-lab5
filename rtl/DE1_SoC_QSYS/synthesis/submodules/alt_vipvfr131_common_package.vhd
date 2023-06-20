@@ -10,7 +10,6 @@
 -- or its authorized distributors.  Please refer to the applicable
 -- agreement for further details.
 
---synthesis library work
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.numeric_std.ALL;
