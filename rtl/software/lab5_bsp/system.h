@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'DE1_SoC_QSYS'
  * SOPC Builder design path: ../../DE1_SoC_QSYS.sopcinfo
  *
- * Generated: Mon Jun 19 19:26:26 PDT 2023
+ * Generated: Mon Jun 19 21:24:35 PDT 2023
  */
 
 /*
@@ -764,7 +764,7 @@
 #define SYSID_QSYS_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_NAME "/dev/sysid_qsys"
 #define SYSID_QSYS_SPAN 8
-#define SYSID_QSYS_TIMESTAMP 1687223135
+#define SYSID_QSYS_TIMESTAMP 1687234091
 #define SYSID_QSYS_TYPE "altera_avalon_sysid_qsys"
 
 

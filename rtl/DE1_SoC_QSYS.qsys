@@ -24,11 +24,6 @@
          value = "9";
          type = "int";
       }
-      datum sopceditor_expanded
-      {
-         value = "0";
-         type = "boolean";
-      }
    }
    element audio.data_fregen_s1
    {
@@ -109,11 +104,6 @@
          value = "15";
          type = "int";
       }
-      datum sopceditor_expanded
-      {
-         value = "0";
-         type = "boolean";
-      }
    }
    element audio_sel.s1
    {
@@ -129,11 +119,6 @@
       {
          value = "17";
          type = "int";
-      }
-      datum sopceditor_expanded
-      {
-         value = "0";
-         type = "boolean";
       }
    }
    element clk_50
@@ -151,11 +136,6 @@
          value = "2";
          type = "int";
       }
-      datum sopceditor_expanded
-      {
-         value = "1";
-         type = "boolean";
-      }
    }
    element cpu.jtag_debug_module
    {
@@ -171,11 +151,6 @@
       {
          value = "20";
          type = "int";
-      }
-      datum sopceditor_expanded
-      {
-         value = "0";
-         type = "boolean";
       }
    }
    element dds_increment.s1
@@ -193,11 +168,6 @@
          value = "14";
          type = "int";
       }
-      datum sopceditor_expanded
-      {
-         value = "0";
-         type = "boolean";
-      }
    }
    element div_freq.s1
    {
@@ -213,11 +183,6 @@
       {
          value = "5";
          type = "int";
-      }
-      datum sopceditor_expanded
-      {
-         value = "0";
-         type = "boolean";
       }
    }
    element jtag_uart.avalon_jtag_slave
@@ -235,11 +200,6 @@
          value = "7";
          type = "int";
       }
-      datum sopceditor_expanded
-      {
-         value = "0";
-         type = "boolean";
-      }
    }
    element key.s1
    {
@@ -255,11 +215,6 @@
       {
          value = "12";
          type = "int";
-      }
-      datum sopceditor_expanded
-      {
-         value = "0";
-         type = "boolean";
       }
    }
    element keyboard_keys.s1
@@ -277,10 +232,13 @@
          value = "18";
          type = "int";
       }
-      datum sopceditor_expanded
+   }
+   element lfsr_clk_interrupt_gen.irq
+   {
+      datum _tags
       {
-         value = "0";
-         type = "boolean";
+         value = "";
+         type = "String";
       }
    }
    element lfsr_clk_interrupt_gen.s1
@@ -298,11 +256,6 @@
          value = "19";
          type = "int";
       }
-      datum sopceditor_expanded
-      {
-         value = "0";
-         type = "boolean";
-      }
    }
    element lfsr_val.s1
    {
@@ -318,11 +271,6 @@
       {
          value = "11";
          type = "int";
-      }
-      datum sopceditor_expanded
-      {
-         value = "0";
-         type = "boolean";
       }
    }
    element modulation_selector.s1
@@ -340,11 +288,6 @@
          value = "13";
          type = "int";
       }
-      datum sopceditor_expanded
-      {
-         value = "0";
-         type = "boolean";
-      }
    }
    element mouse_pos.s1
    {
@@ -361,11 +304,6 @@
          value = "1";
          type = "int";
       }
-      datum sopceditor_expanded
-      {
-         value = "0";
-         type = "boolean";
-      }
    }
    element sdram
    {
@@ -373,11 +311,6 @@
       {
          value = "6";
          type = "int";
-      }
-      datum sopceditor_expanded
-      {
-         value = "0";
-         type = "boolean";
       }
    }
    element sdram.s1
@@ -400,11 +333,6 @@
          value = "10";
          type = "int";
       }
-      datum sopceditor_expanded
-      {
-         value = "0";
-         type = "boolean";
-      }
    }
    element signal_selector.s1
    {
@@ -420,11 +348,6 @@
       {
          value = "3";
          type = "int";
-      }
-      datum sopceditor_expanded
-      {
-         value = "0";
-         type = "boolean";
       }
    }
    element sysid_qsys.control_slave
@@ -442,11 +365,6 @@
          value = "4";
          type = "int";
       }
-      datum sopceditor_expanded
-      {
-         value = "0";
-         type = "boolean";
-      }
    }
    element timer.s1
    {
@@ -463,11 +381,6 @@
          value = "8";
          type = "int";
       }
-      datum sopceditor_expanded
-      {
-         value = "0";
-         type = "boolean";
-      }
    }
    element vga.to_nios_2_datamaster
    {
@@ -483,11 +396,6 @@
       {
          value = "16";
          type = "int";
-      }
-      datum sopceditor_expanded
-      {
-         value = "0";
-         type = "boolean";
       }
    }
 }

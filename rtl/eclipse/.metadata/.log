@@ -1,4 +1,4 @@
-!SESSION 2023-06-19 09:31:02.689 -----------------------------------------------
+!SESSION 2023-06-19 21:21:57.893 -----------------------------------------------
 eclipse.buildId=4.3.2.M20140221-1700
 java.version=1.8.0_05
 java.vendor=Oracle Corporation
@@ -6,151 +6,14 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
 Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/16.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/16.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
 
-!ENTRY org.eclipse.cdt.core 1 0 2023-06-19 09:33:15.960
-!MESSAGE Indexed 'lab5' (22 sources, 10 headers) in 6.29 sec: 1,418 declarations; 3,963 references; 39 unresolved inclusions; 2 syntax errors; 97 unresolved names (1.77%)
+!ENTRY org.eclipse.cdt.core 1 0 2023-06-19 21:23:38.045
+!MESSAGE Indexed 'lab5' (22 sources, 10 headers) in 6.92 sec: 1,418 declarations; 3,963 references; 39 unresolved inclusions; 2 syntax errors; 97 unresolved names (1.77%)
 
-!ENTRY org.eclipse.cdt.core 1 0 2023-06-19 09:33:54.856
-!MESSAGE Indexed 'lab5_bsp' (94 sources, 158 headers) in 3.84 sec: 6,431 declarations; 15,955 references; 4 unresolved inclusions; 4 syntax errors; 27 unresolved names (0.12%)
+!ENTRY org.eclipse.cdt.core 1 0 2023-06-19 21:24:22.364
+!MESSAGE Indexed 'lab5_bsp' (94 sources, 138 headers) in 3.45 sec: 4,870 declarations; 13,877 references; 85 unresolved inclusions; 8 syntax errors; 179 unresolved names (0.95%)
 
-!ENTRY org.eclipse.cdt.core 1 0 2023-06-19 09:34:44.743
-!MESSAGE Indexed 'lab5' (22 sources, 10 headers) in 2.60 sec: 1,418 declarations; 3,963 references; 39 unresolved inclusions; 2 syntax errors; 97 unresolved names (1.77%)
+!ENTRY com.altera.sbtgui.launch 1 0 2023-06-19 21:25:09.838
+!MESSAGE Executing: [C:/intelfpga_lite/16.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --sidp=0x80011d0 --id=0x0 --timestamp=1687234091]
 
-!ENTRY org.eclipse.cdt.core 1 0 2023-06-19 09:35:14.456
-!MESSAGE Indexed 'lab5_bsp' (94 sources, 103 headers) in 1.27 sec: 3,075 declarations; 11,382 references; 93 unresolved inclusions; 8 syntax errors; 188 unresolved names (1.28%)
-!SESSION 2023-06-19 09:35:29.573 -----------------------------------------------
-eclipse.buildId=4.3.2.M20140221-1700
-java.version=1.8.0_05
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
-Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/16.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/16.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
-
-!ENTRY com.altera.sbtgui.launch 1 0 2023-06-19 09:37:43.130
-!MESSAGE Executing: [C:/intelfpga_lite/16.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --sidp=0x80011c0 --id=0x0 --timestamp=1489109339]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2023-06-19 09:37:45.574
-!MESSAGE Executing: [C:/intelfpga_lite/16.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --sidp=0x80011c0 --id=0x0 --timestamp=1489109339 /cygdrive/c/cpen311/cpen311-lab5/rtl/software/lab5/lab5.elf]
-!SESSION 2023-06-19 17:35:12.999 -----------------------------------------------
-eclipse.buildId=4.3.2.M20140221-1700
-java.version=1.8.0_05
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
-Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/16.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/16.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
-
-!ENTRY com.altera.sbtgui.launch 1 0 2023-06-19 17:36:34.493
-!MESSAGE Executing: [C:/intelfpga_lite/16.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --sidp=0x80011c0 --id=0x0 --timestamp=1489109339]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2023-06-19 17:36:37.024
-!MESSAGE Executing: [C:/intelfpga_lite/16.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --sidp=0x80011c0 --id=0x0 --timestamp=1489109339 /cygdrive/c/cpen311/cpen311-lab5/rtl/software/lab5/lab5.elf]
-!SESSION 2023-06-19 19:15:38.250 -----------------------------------------------
-eclipse.buildId=4.3.2.M20140221-1700
-java.version=1.8.0_05
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
-Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/16.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/16.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
-
-!ENTRY org.eclipse.core.resources 2 10035 2023-06-19 19:15:43.553
-!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
-
-!ENTRY org.eclipse.cdt.core 1 0 2023-06-19 19:20:04.495
-!MESSAGE Indexed 'lab5_bsp2' (83 sources, 67 headers) in 2.67 sec: 1,228 declarations; 2,637 references; 112 unresolved inclusions; 6 syntax errors; 191 unresolved names (4.71%)
-
-!ENTRY org.eclipse.ltk.ui.refactoring 4 10000 2023-06-19 19:24:40.520
-!MESSAGE Internal Error
-!STACK 1
-org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
-	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:816)
-	at org.eclipse.core.internal.resources.Project.delete(Project.java:344)
-	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
-	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
-	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
-	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2345)
-	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
-	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
-	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2345)
-	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
-	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
-Contains: Could not delete 'C:\cpen311\cpen311-lab5\rtl\software\lab5_bsp2\Makefile'.
-org.eclipse.core.runtime.CoreException: Problems encountered while deleting files.
-	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:131)
-	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFile(ResourceTree.java:304)
-	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteProject(ResourceTree.java:384)
-	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteProject(ResourceTree.java:837)
-	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1981)
-	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:803)
-	at org.eclipse.core.internal.resources.Project.delete(Project.java:344)
-	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
-	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
-	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
-	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2345)
-	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
-	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
-	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2345)
-	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
-	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
-Contains: Could not delete: C:\cpen311\cpen311-lab5\rtl\software\lab5_bsp2\Makefile.
-Contains: Could not delete 'C:\cpen311\cpen311-lab5\rtl\software\lab5_bsp2'.
-!SUBENTRY 1 org.eclipse.core.resources 4 273 2023-06-19 19:24:40.520
-!MESSAGE Problems encountered while deleting resources.
-!SUBENTRY 2 org.eclipse.core.resources 4 273 2023-06-19 19:24:40.520
-!MESSAGE Could not delete 'C:\cpen311\cpen311-lab5\rtl\software\lab5_bsp2\Makefile'.
-!STACK 1
-org.eclipse.core.runtime.CoreException: Problems encountered while deleting files.
-	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:131)
-	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFile(ResourceTree.java:304)
-	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteProject(ResourceTree.java:384)
-	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteProject(ResourceTree.java:837)
-	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1981)
-	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:803)
-	at org.eclipse.core.internal.resources.Project.delete(Project.java:344)
-	at org.eclipse.ltk.core.refactoring.resource.DeleteResourceChange.perform(DeleteResourceChange.java:160)
-	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
-	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
-	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2345)
-	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
-	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
-	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
-	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2345)
-	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
-	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
-Contains: Could not delete: C:\cpen311\cpen311-lab5\rtl\software\lab5_bsp2\Makefile.
-!SUBENTRY 3 org.eclipse.core.filesystem 4 273 2023-06-19 19:24:40.520
-!MESSAGE Problems encountered while deleting files.
-!SUBENTRY 4 org.eclipse.core.filesystem 4 273 2023-06-19 19:24:40.520
-!MESSAGE Could not delete: C:\cpen311\cpen311-lab5\rtl\software\lab5_bsp2\Makefile.
-!SUBENTRY 2 org.eclipse.core.resources 4 273 2023-06-19 19:24:40.520
-!MESSAGE Could not delete 'C:\cpen311\cpen311-lab5\rtl\software\lab5_bsp2'.
-
-!ENTRY org.eclipse.cdt.core 1 0 2023-06-19 19:26:09.163
-!MESSAGE Indexed 'lab5_bsp' (94 sources, 73 headers) in 1.91 sec: 2,474 declarations; 10,160 references; 116 unresolved inclusions; 8 syntax errors; 207 unresolved names (1.61%)
-
-!ENTRY com.altera.sbtgui.launch 1 0 2023-06-19 19:29:59.992
-!MESSAGE Executing: [C:/intelfpga_lite/16.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --sidp=0x80011d0 --id=0x0 --timestamp=1687223135]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2023-06-19 19:30:02.479
-!MESSAGE Executing: [C:/intelfpga_lite/16.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --sidp=0x80011d0 --id=0x0 --timestamp=1687223135 /cygdrive/c/cpen311/cpen311-lab5/rtl/software/lab5/lab5.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2023-06-19 19:31:41.612
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2023-06-19 19:31:42.506
-!MESSAGE Executing: [C:/intelfpga_lite/16.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --sidp=0x80011d0 --id=0x0 --timestamp=1687223135]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2023-06-19 19:31:44.911
-!MESSAGE Executing: [C:/intelfpga_lite/16.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --sidp=0x80011d0 --id=0x0 --timestamp=1687223135 /cygdrive/c/cpen311/cpen311-lab5/rtl/software/lab5/lab5.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2023-06-19 19:52:46.244
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2023-06-19 19:52:47.249
-!MESSAGE Executing: [C:/intelfpga_lite/16.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop --sidp=0x80011d0 --id=0x0 --timestamp=1687223135]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2023-06-19 19:52:49.812
-!MESSAGE Executing: [C:/intelfpga_lite/16.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --sidp=0x80011d0 --id=0x0 --timestamp=1687223135 /cygdrive/c/cpen311/cpen311-lab5/rtl/software/lab5/lab5.elf]
+!ENTRY com.altera.sbtgui.launch 1 0 2023-06-19 21:25:12.333
+!MESSAGE Executing: [C:/intelfpga_lite/16.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go --sidp=0x80011d0 --id=0x0 --timestamp=1687234091 /cygdrive/c/cpen311/cpen311-lab5/rtl/software/lab5/lab5.elf]

@@ -383,7 +383,7 @@ DDS scope_DDS_bot
 	.rst(reset_from_key),
 	.en(1'b1),
 	.data(2'b00),
-	.fsk_phase_inc(32'bx),
+	.fsk_phase_inc(32'b0),
 	.mode({1'b0, dds_bot_sel}),
 	.wave(dds_bot_out)
 );

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="740" key="dialogHeight"/>
+		<item value="749" key="dialogHeight"/>
 		<item value="1440" key="dialogWidth"/>
 		<list key="textEntries">
 		</list>
@@ -13,7 +13,7 @@
 		</list>
 	</section>
 	<section name="ImportExportAction">
-		<item value="com.altera.sbtgui.projectimporter.importWizards.CustomMakefileImportWizard" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<item value="com.altera.sbtgui.projectimporter.importWizards.ImportWizard" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="com.altera.sbtgui.projectimporter.importWizards.sampleCategory"/>
 		</list>
