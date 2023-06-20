@@ -344,7 +344,7 @@ DE1_SoC_QSYS U0(
 
 /*Instantiate DDS wrapper for top (modulated)*/
 logic [1:0] 		dds_top_data;
-logic [1:0] 		dds_top_sel;
+logic [2:0] 		dds_top_sel;
 logic signed [11:0] dds_top_out;
 DDS scope_DDS_top
 (
@@ -365,9 +365,9 @@ fts_sync #(.N(12)) dds_top_out_syncro
 	.fastclk(CLOCK_50),
 	.slowclk(sampler)
 );
-stf_sync #(.N(2)) dds_top_sel_syncro
+stf_sync #(.N(3)) dds_top_sel_syncro
 (
-	.data(modulation_selector[1:0]),
+	.data(modulation_selector[2:0]),
 	.synced(dds_top_sel),
 	.fastclk(CLOCK_50),
 	.slowclk(sampler)
@@ -375,7 +375,7 @@ stf_sync #(.N(2)) dds_top_sel_syncro
 
 /*Instantiate DDS wrapper for bottom (raw)*/
 logic [1:0] 		dds_bot_data;
-logic [1:0] 		dds_bot_sel;
+logic [2:0] 		dds_bot_sel;
 logic signed [11:0] dds_bot_out;
 DDS scope_DDS_bot
 (
@@ -396,9 +396,9 @@ fts_sync #(.N(12)) dds_bot_out_syncro
 	.fastclk(CLOCK_50),
 	.slowclk(sampler)
 );
-stf_sync #(.N(2)) dds_bot_sel_syncro
+stf_sync #(.N(3)) dds_bot_sel_syncro
 (
-	.data(signal_selector[1:0]),
+	.data(signal_selector[2:0]),
 	.synced(dds_bot_sel),
 	.fastclk(CLOCK_50),
 	.slowclk(sampler)
