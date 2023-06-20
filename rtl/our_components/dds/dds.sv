@@ -84,7 +84,7 @@ module DDS
             ASK:    wave = data[0] ? sine : 12'b0;
             BPSK:   wave = data[0] ? ~sine : sine;
             FSK:    wave = sine;
-            RAW:    wave = data[0] ? 12'b0 : {12{1'b1}};
+            RAW:    wave = data[0] ? 12'b0 : {1'b1, {11{1'b0}}};
             QPSK:   wave = qpsk_wave[12:1];
             default: wave = 12'b0;
         endcase
