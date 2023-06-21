@@ -334,6 +334,15 @@ DE1_SoC_QSYS U0(
 (* keep = 1, preserve = 1 *) logic [11:0] actual_selected_modulation;
 (* keep = 1, preserve = 1 *) logic [11:0] actual_selected_signal;
 
+
+/* Use Clock Divider to create 1 Hz clock from CLOCK_50 */
+
+
+
+/* 5-Bit Linear Feedback Shift Register */
+
+
+
 /*Instantiate DDS wrapper for top (modulated)*/
 logic [1:0] 		dds_top_data;
 logic [1:0] 		dds_top_sel;
