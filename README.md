@@ -2,7 +2,7 @@
 
 ## Something about the SOF file
 It is located here:  
-[./rtl/output_files/rc4.sof](./rtl/output_files/rc4.sof)
+[./rtl/dds_and_nios_lab_time_limited.sof](./rtl/dds_and_nios_lab_time_limited.sof)
 
 ## Something about the status
 All parts complete, including:  
