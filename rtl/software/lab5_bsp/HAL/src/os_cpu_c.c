@@ -20,7 +20,17 @@
 
 #include "system.h"
 
-extern alt_u32 OSStartTsk;                 /* The entry point for all tasks. */
+/* This used to be
+ *    extern alt_u32 OSStartTsk;  
+ * but that results in a fatal error when compiling -mgpopt=global
+ * because gcc assumes they are normal C variables in .sdata
+ * and therefore addressable from gp using a 16-bit offset,
+ * when in fact they are special values defined by linker.x
+ * and located nowhere near .sdata. 
+ * Specifying __attribute__((section(".data"))) will force these
+ * in .data. (CASE:258384 or CASE:362640)
+ */
+extern alt_u32 OSStartTsk __attribute__((section(".data")));    /* The entry point for all tasks. */
 
 #if OS_TMR_EN > 0
 static  INT16U  OSTmrCtr;
