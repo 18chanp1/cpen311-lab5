@@ -342,6 +342,30 @@ DE1_SoC_QSYS U0(
 (* keep = 1, preserve = 1 *) logic [11:0] actual_selected_modulation;
 (* keep = 1, preserve = 1 *) logic [11:0] actual_selected_signal;
 
+
+/* Use Clock Divider to create 1 Hz clock from CLOCK_50 */
+logic [31:0] One_Hz_Count_Limit = 32'd2500_0000; // (50 Mhz / 1 Hz) / 2 = 2500_0000
+logic Clock_1_Hz;
+clock_divider Hz_1_Divider
+(
+	.clk_signal_in(CLOCK_50), 
+	.counter_limit(One_Hz_Count_Limit), 
+	.clk_signal_out(Clock_1_Hz)
+)
+
+
+/* 5-Bit Linear Feedback Shift Register */
+logic [4:0] lfsr;
+logic reset;
+assign reset = ~KEY[3];
+linear_feedback_shift_register_5_bit LFSR
+(
+	.clk(Clock_1_Hz),
+	.reset(reset),
+	.lfsr(lfsr)
+)
+
+
 /*Instantiate DDS wrapper for top (modulated)*/
 logic [1:0] 		dds_top_data;
 logic [2:0] 		dds_top_sel;
