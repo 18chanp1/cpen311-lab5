@@ -6,7 +6,8 @@ It is located here:
 
 ## Something about the status
 All parts complete, including:  
-  
+* LFSR
+* (PACO FILL IN WHAT YOU HAVE DONE)  
 
 Complete with simulations and SignalTaps
 
@@ -14,10 +15,20 @@ Complete with simulations and SignalTaps
 [./docs](./docs)  
 They are partitioned by task. Inside, you will find simulation screenshots and SignalTap screenshots.  
 
+LFSR:
+![./docs/lfsr/01.png](./docs/lfsr/01.png) 
+
+PACO ADD HERE
+
 
 ## Annotated SignalTap screenshots
 [./docs](./docs)  
 They are partitioned by task. Inside, you will find simulation screenshots and SignalTap screenshots. 
+
+LFSR:
+
+
+PACO ADD HERE
 
 
 ## Additional Information
