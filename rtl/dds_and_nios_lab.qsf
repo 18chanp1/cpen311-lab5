@@ -786,6 +786,8 @@ set_global_assignment -name OPTIMIZE_POWER_DURING_SYNTHESIS OFF
 set_global_assignment -name BLOCK_RAM_AND_MLAB_EQUIVALENT_POWER_UP_CONDITIONS CARE
 set_global_assignment -name ENABLE_SIGNALTAP ON
 set_global_assignment -name USE_SIGNALTAP_FILE stp1.stp
+set_global_assignment -name SYNTHESIS_EFFORT FAST
+set_global_assignment -name SYSTEMVERILOG_FILE our_components/clock_divider/clock_divider.sv
 set_global_assignment -name SYSTEMVERILOG_FILE our_components/synchronizers/stf_sync.sv
 set_global_assignment -name SYSTEMVERILOG_FILE our_components/synchronizers/fts_sync.sv
 set_global_assignment -name SYSTEMVERILOG_FILE our_components/dds/dds.sv
@@ -807,7 +809,6 @@ set_global_assignment -name VERILOG_FILE PS2_ScanCodeReader.v
 set_global_assignment -name VERILOG_FILE Keyboard_Controller.v
 set_global_assignment -name QIP_FILE DE1_SoC_QSYS/synthesis/DE1_SoC_QSYS.qip
 set_global_assignment -name SDC_FILE dds_and_nios_lab.sdc
-set_global_assignment -name SYNTHESIS_EFFORT FAST
 set_global_assignment -name SYSTEMVERILOG_FILE our_components/lfsr/lfsr.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../sim/LFSR/lfsr_tb.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

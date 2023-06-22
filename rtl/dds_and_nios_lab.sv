@@ -274,6 +274,7 @@ logic lfsr_clk;
 logic [4:0]LFSR;
 logic [31:0] dds_increment;
 
+
 /// NIOS II Qsys
 
 DE1_SoC_QSYS U0( 
@@ -321,14 +322,14 @@ DE1_SoC_QSYS U0(
        .vga_vga_clk_clk                               (video_clk_40Mhz),                               //                     vga_vga_clk.clk
        .clk_25_out_clk                                (CLK_25MHZ),                                 //                      clk_25_out.clk
        
-	   //FSK Interrupt wires TODO
-	//    .lfsr_clk_interrupt_gen_in_export(lfsr_clk),
-	//    .lfsr_val_in_export({{27{1'b0}},LFSR}),
-	//    .dds_increment_out_export(dds_increment)
+	   //FSK Interrupt wires
+	    .lfsr_clk_interrupt_gen_in_export(lfsr_clk_sync),
+	    .lfsr_val_in_export({{27{1'b0}},LFSR}),
+	    .dds_increment_out_export(dds_increment)
 
-	   .lfsr_clk_interrupt_gen_in_export(~KEY[3]),
-	   .lfsr_val_in_export({{31{1'B0}}, SW[3]}),
-	   .dds_increment_out_export(dds_increment)
+	   //.lfsr_clk_interrupt_gen_in_export(~KEY[3]),
+	   //.lfsr_val_in_export({{31{1'B0}}, SW[3]}),
+	   //.dds_increment_out_export(dds_increment)
 	);
 	
  
@@ -345,25 +346,33 @@ DE1_SoC_QSYS U0(
 
 /* Use Clock Divider to create 1 Hz clock from CLOCK_50 */
 logic [31:0] One_Hz_Count_Limit = 32'd2500_0000; // (50 Mhz / 1 Hz) / 2 = 2500_0000
-logic Clock_1_Hz;
 clock_divider Hz_1_Divider
 (
 	.clk_signal_in(CLOCK_50), 
 	.counter_limit(One_Hz_Count_Limit), 
-	.clk_signal_out(Clock_1_Hz)
-)
+	.clk_signal_out(lfsr_clk)
+);
+
+/* Sycnchronize 1 Hz Clk */
+logic lfsr_clk_sync;
+stf_sync #(.N(1)) lfsr_clk_sync_inst
+(
+	.data(lfsr_clk),
+	.synced(lfsr_clk_sync),
+	.fastclk(CLOCK_50),
+	.slowclk(lfsr_clk)
+);
 
 
 /* 5-Bit Linear Feedback Shift Register */
-logic [4:0] lfsr;
 logic reset;
 assign reset = ~KEY[3];
-linear_feedback_shift_register_5_bit LFSR
+linear_feedback_shift_register_5_bit lfsr_5_bit
 (
-	.clk(Clock_1_Hz),
+	.clk(lfsr_clk),
 	.reset(reset),
-	.lfsr(lfsr)
-)
+	.lfsr(LFSR)
+);
 
 
 /*Instantiate DDS wrapper for top (modulated)*/
@@ -375,7 +384,7 @@ DDS scope_DDS_top
 	.clk(CLOCK_50),
 	.rst(reset_from_key),
 	.en(1'b1),
-	.data(SW[4:3]), //TODO, replace with LFSR
+	.data({2{LFSR[0]}}),
 	.mode({1'b1, dds_top_sel}),
 	.fsk_phase_inc(dds_increment),
 	.wave(dds_top_out),
