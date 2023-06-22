@@ -319,8 +319,16 @@ DE1_SoC_QSYS U0(
 	   .audio_sel_export                              (audio_selector),                               //                       audio_sel.export
 	   
        .vga_vga_clk_clk                               (video_clk_40Mhz),                               //                     vga_vga_clk.clk
-       .clk_25_out_clk                                (CLK_25MHZ)                                 //                      clk_25_out.clk
+       .clk_25_out_clk                                (CLK_25MHZ),                                 //                      clk_25_out.clk
        
+	   //FSK Interrupt wires TODO
+	//    .lfsr_clk_interrupt_gen_in_export(lfsr_clk),
+	//    .lfsr_val_in_export({{27{1'b0}},LFSR}),
+	//    .dds_increment_out_export(dds_increment)
+
+	   .lfsr_clk_interrupt_gen_in_export(~KEY[3]),
+	   .lfsr_val_in_export({{31{1'B0}}, SW[3]}),
+	   .dds_increment_out_export(dds_increment)
 	);
 	
  
@@ -336,7 +344,7 @@ DE1_SoC_QSYS U0(
 
 /*Instantiate DDS wrapper for top (modulated)*/
 logic [1:0] 		dds_top_data;
-logic [1:0] 		dds_top_sel;
+logic [2:0] 		dds_top_sel;
 logic signed [11:0] dds_top_out;
 DDS scope_DDS_top
 (
@@ -345,7 +353,8 @@ DDS scope_DDS_top
 	.en(1'b1),
 	.data(SW[4:3]), //TODO, replace with LFSR
 	.mode({1'b1, dds_top_sel}),
-	.wave(dds_top_out)
+	.fsk_phase_inc(dds_increment),
+	.wave(dds_top_out),
 );
 
 /* Synchronize signals to/from top (modulated) */
@@ -356,9 +365,9 @@ fts_sync #(.N(12)) dds_top_out_syncro
 	.fastclk(CLOCK_50),
 	.slowclk(sampler)
 );
-stf_sync #(.N(2)) dds_top_sel_syncro
+stf_sync #(.N(3)) dds_top_sel_syncro
 (
-	.data(modulation_selector[1:0]),
+	.data(modulation_selector[2:0]),
 	.synced(dds_top_sel),
 	.fastclk(CLOCK_50),
 	.slowclk(sampler)
@@ -366,7 +375,7 @@ stf_sync #(.N(2)) dds_top_sel_syncro
 
 /*Instantiate DDS wrapper for bottom (raw)*/
 logic [1:0] 		dds_bot_data;
-logic [1:0] 		dds_bot_sel;
+logic [2:0] 		dds_bot_sel;
 logic signed [11:0] dds_bot_out;
 DDS scope_DDS_bot
 (
@@ -374,6 +383,7 @@ DDS scope_DDS_bot
 	.rst(reset_from_key),
 	.en(1'b1),
 	.data(2'b00),
+	.fsk_phase_inc(32'b0),
 	.mode({1'b0, dds_bot_sel}),
 	.wave(dds_bot_out)
 );
@@ -386,9 +396,9 @@ fts_sync #(.N(12)) dds_bot_out_syncro
 	.fastclk(CLOCK_50),
 	.slowclk(sampler)
 );
-stf_sync #(.N(2)) dds_bot_sel_syncro
+stf_sync #(.N(3)) dds_bot_sel_syncro
 (
-	.data(signal_selector[1:0]),
+	.data(signal_selector[2:0]),
 	.synced(dds_bot_sel),
 	.fastclk(CLOCK_50),
 	.slowclk(sampler)
