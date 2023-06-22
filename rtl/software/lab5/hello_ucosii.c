@@ -90,9 +90,9 @@ extern struct gimp_image_struct stop_up;
 extern unsigned char song0 [];
 extern unsigned char song1 [];
 extern unsigned char song2 [];
-unsigned char* songs[3] = {song0, song1, song2};
+unsigned char* songs[SONG_COUNT] = {song0, song1, song2};
+int song_len[SONG_COUNT] = {1320000, 1320000,1320000};
 
-extern unsigned int size_song;
 // VARIABLES GLOBALES DE BOTONES
 unsigned char buttons_control1[12];
 unsigned char buttons_control2[12];
@@ -146,6 +146,12 @@ void init_background() { // INIT BACKGROUND
 
 }
 
+unsigned char play_song = 0;
+unsigned char pause_song = 0;
+unsigned char stop_song = 0;
+unsigned int currentSong = 0;
+int address_counter = 0;
+
 /*Read song from EPCS, and send it to the FIFO*/
 #define MAX_ADDRESS 524287
 #define NUMERO_DE_MUESTRAS 1000 // mini buffer
@@ -154,16 +160,10 @@ int i;
 for (i = 0; i < NUMERO_DE_MUESTRAS; i++) {
 while (audio_dac_fifo_full() == 1)
 ;
-audio_dac_wr_fifo( buf[i % size_song]);
+audio_dac_wr_fifo( buf[i % song_len[currentSong]]);
 }
 
 }
-
-unsigned char play_song = 0;
-unsigned char pause_song = 0;
-unsigned char stop_song = 0;
-unsigned int currentSong = 0;
-int address_counter = 0;
 
 int freq_reader = FREQ_READER_NOMINAL;
 
@@ -176,8 +176,8 @@ void task1(void* pdata) // ANIMATION BY SOFTWARE TASK
 
 		if (play_song == 1) {
 
-			send_audio_fifo(&songs[currentSong][address_counter % size_song]);
-			if (address_counter < size_song) {
+			send_audio_fifo(&songs[currentSong][address_counter % song_len[currentSong]]);
+			if (address_counter < song_len[currentSong]) {
 				address_counter += NUMERO_DE_MUESTRAS;
 
 			} else {
@@ -369,6 +369,7 @@ if (event == 1) {	//down event
 		address_counter = 0;
 		currentSong = (currentSong <= 0) ? SONG_COUNT - 1 : currentSong - 1;
 	}
+	// Next button
 	else if (x_mouse >= 667 && x_mouse <= (667 + 120) && y_mouse >= 157
 			&& y_mouse <= (157 + 35)) {
 		address_counter = 0;
