@@ -1,3 +1,16 @@
+/**
+ * A utility to convert binary music files to C formatted
+ * files accepted by the DE1.
+ * 
+ * Usage: ./readbin
+ * 
+ * The music file must be named "song.bin". The C file
+ * "song.c" will be saved in the same directory.
+ * --------------------
+ * Music file specifications:
+ * 44 KHz, little endian, mono, 8-bit unsigned PCM.
+*/
+
 #include "stdio.h"
 #include "stdlib.h"
 
