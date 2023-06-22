@@ -1,6 +1,6 @@
 `default_nettype none
 `include "scan_events.h"
-`define ENABLE_AUDIO_DEMO
+//`define ENABLE_AUDIO_DEMO
 module dds_and_nios_lab(
 
       ///////// ADC /////////
