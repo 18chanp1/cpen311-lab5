@@ -124,6 +124,7 @@ void init_background() { // INIT BACKGROUND
 	vid_draw_line(261, 262, 647, 262, 4, WHITE_24, SW_Frame);
 	vid_draw_line(261, 0, 800, 0, 4, WHITE_24, SW_Frame);
 
+	draw_button(667, 194, 120, 35, 0x0066CC, "QPSK", 0, SW_Frame);
 	draw_button(667, 252, 120, 35, 0x0066CC, "ASK", 1, SW_Frame);
 	draw_button(667, 289, 120, 35, 0x0066CC, "FSK", 0, SW_Frame);
 	draw_button(667, 326, 120, 35, 0x0066CC, "BPSK", 0, SW_Frame);
@@ -138,7 +139,13 @@ void init_background() { // INIT BACKGROUND
 
 /*Read song from EPCS, and send it to the FIFO*/
 #define MAX_ADDRESS 524287
-#define NUMERO_DE_MUESTRAS 1000 // mini buffervoid send_audio_fifo(unsigned char *buf) {int i;for (i = 0; i < NUMERO_DE_MUESTRAS; i++) {while (audio_dac_fifo_full() == 1);audio_dac_wr_fifo( buf[i % size_song]);
+#define NUMERO_DE_MUESTRAS 1000 // mini buffer
+void send_audio_fifo(unsigned char *buf) {
+int i;
+for (i = 0; i < NUMERO_DE_MUESTRAS; i++) {
+while (audio_dac_fifo_full() == 1)
+;
+audio_dac_wr_fifo( buf[i % size_song]);
 }
 
 }
@@ -191,6 +198,7 @@ if (event == 1) {	//down event
 	//Logic for the modulation buttons
 	if (x_mouse >= 667 && x_mouse <= (667 + 120) && y_mouse >= 252
 			&& y_mouse <= (252 + 35)) {
+		draw_button(667, 194, 120, 35, 0x0066CC, "QPSK", 0, SW_Frame);
 		draw_button(667, 252, 120, 35, 0x0066CC, "ASK", 1, SW_Frame);
 		draw_button(667, 289, 120, 35, 0x0066CC, "FSK", 0, SW_Frame);
 		draw_button(667, 326, 120, 35, 0x0066CC, "BPSK", 0, SW_Frame);
@@ -201,6 +209,7 @@ if (event == 1) {	//down event
 
 	else if (x_mouse >= 667 && x_mouse <= (667 + 120) && y_mouse >= 289
 			&& y_mouse <= (289 + 35)) {
+		draw_button(667, 194, 120, 35, 0x0066CC, "QPSK", 0, SW_Frame);
 		draw_button(667, 252, 120, 35, 0x0066CC, "ASK", 0, SW_Frame);
 		draw_button(667, 289, 120, 35, 0x0066CC, "FSK", 1, SW_Frame);
 		draw_button(667, 326, 120, 35, 0x0066CC, "BPSK", 0, SW_Frame);
@@ -209,6 +218,7 @@ if (event == 1) {	//down event
 		select_modulation(1);
 	} else if (x_mouse >= 667 && x_mouse <= (667 + 120) && y_mouse >= 326
 			&& y_mouse <= (326 + 35)) {
+		draw_button(667, 194, 120, 35, 0x0066CC, "QPSK", 0, SW_Frame);
 		draw_button(667, 252, 120, 35, 0x0066CC, "ASK", 0, SW_Frame);
 		draw_button(667, 289, 120, 35, 0x0066CC, "FSK", 0, SW_Frame);
 		draw_button(667, 326, 120, 35, 0x0066CC, "BPSK", 1, SW_Frame);
@@ -217,12 +227,22 @@ if (event == 1) {	//down event
 		select_modulation(2);
 	} else if (x_mouse >= 667 && x_mouse <= (667 + 120) && y_mouse >= 365
 			&& y_mouse <= (365 + 35)) {
+		draw_button(667, 194, 120, 35, 0x0066CC, "QPSK", 0, SW_Frame);
 		draw_button(667, 252, 120, 35, 0x0066CC, "ASK", 0, SW_Frame);
 		draw_button(667, 289, 120, 35, 0x0066CC, "FSK", 0, SW_Frame);
 		draw_button(667, 326, 120, 35, 0x0066CC, "BPSK", 0, SW_Frame);
 		draw_button(667, 365, 120, 35, 0x0066CC, "LFSR", 1, SW_Frame);
 
 		select_modulation(3);
+	} else if (x_mouse >= 667 && x_mouse <= (667 + 120) && y_mouse >= 194
+			&& y_mouse <= (194 + 35)) {
+		draw_button(667, 194, 120, 35, 0x0066CC, "QPSK", 1, SW_Frame);
+		draw_button(667, 252, 120, 35, 0x0066CC, "ASK", 0, SW_Frame);
+		draw_button(667, 289, 120, 35, 0x0066CC, "FSK", 0, SW_Frame);
+		draw_button(667, 326, 120, 35, 0x0066CC, "BPSK", 0, SW_Frame);
+		draw_button(667, 365, 120, 35, 0x0066CC, "LFSR", 0, SW_Frame);
+
+		select_modulation(4);
 	}
 
 	//Logic for the signal selector buttons
