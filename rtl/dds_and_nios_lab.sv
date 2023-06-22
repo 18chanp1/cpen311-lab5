@@ -321,14 +321,14 @@ DE1_SoC_QSYS U0(
        .vga_vga_clk_clk                               (video_clk_40Mhz),                               //                     vga_vga_clk.clk
        .clk_25_out_clk                                (CLK_25MHZ),                                 //                      clk_25_out.clk
        
-	   //FSK Interrupt wires TODO
-	//    .lfsr_clk_interrupt_gen_in_export(lfsr_clk),
-	//    .lfsr_val_in_export({{27{1'b0}},LFSR}),
-	//    .dds_increment_out_export(dds_increment)
-
-	   .lfsr_clk_interrupt_gen_in_export(~KEY[3]),
-	   .lfsr_val_in_export({{31{1'B0}}, SW[3]}),
+	   
+	   .lfsr_clk_interrupt_gen_in_export(oneHz_sync),
+	   .lfsr_val_in_export({{27{1'b0}},LFSR}),
 	   .dds_increment_out_export(dds_increment)
+
+	//    .lfsr_clk_interrupt_gen_in_export(~KEY[3]),
+	//    .lfsr_val_in_export({{31{1'B0}}, SW[3]}),
+	//    .dds_increment_out_export(dds_increment)
 	);
 	
  
@@ -345,9 +345,30 @@ DE1_SoC_QSYS U0(
 
 /* Use Clock Divider to create 1 Hz clock from CLOCK_50 */
 
+logic oneHz;
+clock_divider dds_div
+(
+	.clk_signal_in(CLOCK_50),
+	.counter_limit(32'd25_000_000),
+	.clk_signal_out(oneHz)
+);
 
+//Synchronize oneHz
+logic oneHz_sync;
+clk_sync clk_sync_dds_div
+(
+	.clk(CLOCK_50),
+	.pulse(oneHz),
+	.pulse_sync(oneHz_sync)
+);
 
 /* 5-Bit Linear Feedback Shift Register */
+linear_feedback_shift_register_5_bit lfsr_inst
+(
+	.clk(oneHz_sync),
+	.lfsr(LFSR),
+	.reset (reset_from_key)
+);
 
 
 
@@ -360,10 +381,10 @@ DDS scope_DDS_top
 	.clk(CLOCK_50),
 	.rst(reset_from_key),
 	.en(1'b1),
-	.data(SW[4:3]), //TODO, replace with LFSR
+	.data(LFSR[1:0]),
 	.mode({1'b1, dds_top_sel}),
 	.fsk_phase_inc(dds_increment),
-	.wave(dds_top_out),
+	.wave(dds_top_out)
 );
 
 /* Synchronize signals to/from top (modulated) */
