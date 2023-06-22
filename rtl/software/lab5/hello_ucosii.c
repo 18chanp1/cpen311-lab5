@@ -85,7 +85,13 @@ extern struct gimp_image_struct play_up;
 extern struct gimp_image_struct stop_down;
 extern struct gimp_image_struct stop_up;
 
-extern unsigned char song[];
+/*Song Information*/
+#define SONG_COUNT 3
+extern unsigned char song0 [];
+extern unsigned char song1 [];
+extern unsigned char song2 [];
+unsigned char* songs[3] = {song0, song1, song2};
+
 extern unsigned int size_song;
 // VARIABLES GLOBALES DE BOTONES
 unsigned char buttons_control1[12];
@@ -124,6 +130,9 @@ void init_background() { // INIT BACKGROUND
 	vid_draw_line(261, 262, 647, 262, 4, WHITE_24, SW_Frame);
 	vid_draw_line(261, 0, 800, 0, 4, WHITE_24, SW_Frame);
 
+	draw_button(667, 120, 120, 35, 0x0066CC, "PREV", 0, SW_Frame);
+	draw_button(667, 157, 120, 35, 0x0066CC, "NEXT", 0, SW_Frame);
+
 	draw_button(667, 194, 120, 35, 0x0066CC, "QPSK", 0, SW_Frame);
 	draw_button(667, 252, 120, 35, 0x0066CC, "ASK", 1, SW_Frame);
 	draw_button(667, 289, 120, 35, 0x0066CC, "FSK", 0, SW_Frame);
@@ -153,33 +162,35 @@ audio_dac_wr_fifo( buf[i % size_song]);
 unsigned char play_song = 0;
 unsigned char pause_song = 0;
 unsigned char stop_song = 0;
-
+unsigned int currentSong = 0;
+int address_counter = 0;
 
 int freq_reader = FREQ_READER_NOMINAL;
 
 /* Prints "Hello World" and sleeps for three seconds */
 void task1(void* pdata) // ANIMATION BY SOFTWARE TASK
 {
-int address_counter = 0;
-set_audio_frequency_audio_controller(freq_reader);
-while (1) {
+	
+	set_audio_frequency_audio_controller(freq_reader);
+	while (1) {
 
-if (play_song == 1) {
+		if (play_song == 1) {
 
-	send_audio_fifo(&song[address_counter % size_song]);
-	if (address_counter < size_song) {
-		address_counter += NUMERO_DE_MUESTRAS;
+			send_audio_fifo(&songs[currentSong][address_counter % size_song]);
+			if (address_counter < size_song) {
+				address_counter += NUMERO_DE_MUESTRAS;
 
-	} else {
-		address_counter = 0;
+			} else {
+				address_counter = 0;
+				currentSong = (currentSong < SONG_COUNT - 1) ? currentSong + 1 : 0;
+			}
+		} else if (pause_song == 1) {
+
+		} else if (stop_song == 1) {
+			address_counter = 0;
+		}
+		OSTimeDlyHMSM(0, 0, 0, 10);
 	}
-} else if (pause_song == 1) {
-
-} else if (stop_song == 1) {
-	address_counter = 0;
-}
-OSTimeDlyHMSM(0, 0, 0, 10);
-}
 
 }
 
@@ -349,6 +360,21 @@ if (event == 1) {	//down event
 		}
 		set_audio_frequency_audio_controller(freq_reader);
 	}
+
+	//Logic for the next and prev buttons
+	//Prev button
+	if (x_mouse >= 667 && x_mouse <= (667 + 120) && y_mouse >= 120
+			&& y_mouse <= (120 + 35)) {
+
+		address_counter = 0;
+		currentSong = (currentSong <= 0) ? SONG_COUNT - 1 : currentSong - 1;
+	}
+	else if (x_mouse >= 667 && x_mouse <= (667 + 120) && y_mouse >= 157
+			&& y_mouse <= (157 + 35)) {
+		address_counter = 0;
+		currentSong = (currentSong < SONG_COUNT - 1) ? currentSong + 1 : 0;
+	}
+
 }
 
 OSTimeDlyHMSM(0, 0, 0, 100);

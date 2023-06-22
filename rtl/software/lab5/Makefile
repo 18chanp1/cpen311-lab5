@@ -162,8 +162,10 @@ C_SRCS += imagenes/play_up.c
 C_SRCS += imagenes/stop_down.c
 C_SRCS += imagenes/stop_up.c
 C_SRCS += drivers/drivers.c
-C_SRCS += song/song.c
 C_SRCS += student_code/student_code.c
+C_SRCS += song/song0.c
+C_SRCS += song/song1.c
+C_SRCS += song/song2.c
 CXX_SRCS :=
 ASM_SRCS :=
 
