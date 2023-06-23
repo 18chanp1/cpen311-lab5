@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'DE1_SoC_QSYS'
  * SOPC Builder design path: ../../DE1_SoC_QSYS.sopcinfo
  *
- * Generated: Thu Jun 22 14:08:31 PDT 2023
+ * Generated: Thu Jun 22 21:46:58 PDT 2023
  */
 
 /*
