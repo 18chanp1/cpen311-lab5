@@ -1,6 +1,6 @@
 `default_nettype none
 `include "scan_events.h"
-//`define ENABLE_AUDIO_DEMO
+`define ENABLE_AUDIO_DEMO
 module dds_and_nios_lab(
 
       ///////// ADC /////////
@@ -165,7 +165,7 @@ module dds_and_nios_lab(
       output             VGA_VS
 );
 
-parameter COMPILE_HISTOGRAM_SUPPORT = 0;
+parameter COMPILE_HISTOGRAM_SUPPORT = 1;
 
 wire video_clk_40Mhz;
 wire vga_de;
