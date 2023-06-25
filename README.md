@@ -2,7 +2,7 @@
 
 ## Something about the SOF file
 It is located here:  
-[./rtl/sof_files/dds_and_nios_lab2.sof](./rtl/sof_files/dds_and_nios_lab2.sof)
+[./rtl/sof_files/dds_and_nios_lab.sof](./rtl/sof_files/dds_and_nios_lab.sof)
 
 ## Something about the status
 All parts complete, including:  
