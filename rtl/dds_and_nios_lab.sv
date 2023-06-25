@@ -261,6 +261,8 @@ reg HOLDING_DOWN_ARROW;
  
 logic CLK_25MHZ;
 
+//Color wires
+logic [23:0] graph_color;
 
 
 //=======================================================
@@ -321,14 +323,13 @@ DE1_SoC_QSYS U0(
        .vga_vga_clk_clk                               (video_clk_40Mhz),                               //                     vga_vga_clk.clk
        .clk_25_out_clk                                (CLK_25MHZ),                                 //                      clk_25_out.clk
        
-	   
+	   //LFSR Interrupts and values
 	   .lfsr_clk_interrupt_gen_in_export(oneHz_sync),
 	   .lfsr_val_in_export({{27{1'b0}},LFSR}),
-	   .dds_increment_out_export(dds_increment)
+	   .dds_increment_out_export(dds_increment),
 
-	//    .lfsr_clk_interrupt_gen_in_export(~KEY[3]),
-	//    .lfsr_val_in_export({{31{1'B0}}, SW[3]}),
-	//    .dds_increment_out_export(dds_increment)
+	   //Color exports
+	   .color_graph_export(graph_color)
 	);
 	
  
@@ -363,18 +364,25 @@ clk_sync clk_sync_dds_div
 );
 
 /* 5-Bit Linear Feedback Shift Register */
+logic [4:0] lfsr_async_1hz;
 linear_feedback_shift_register_5_bit lfsr_inst
 (
 	.clk(oneHz_sync),
-	.lfsr(LFSR),
+	.lfsr(lfsr_async_1hz),
 	.reset (reset_from_key)
 );
 
+/* Synchronize LFSR */
+stf_sync #(.N(5)) lfsr_sync_inst
+(
+	.data(lfsr_async_1hz),
+	.synced(LFSR),
+	.fastclk(CLOCK_50),
+	.slowclk(oneHz_sync)
+);
 
 
 /*Instantiate DDS wrapper for top (modulated)*/
-logic [1:0] 		dds_top_data;
-logic [2:0] 		dds_top_sel;
 logic signed [11:0] dds_top_out;
 DDS scope_DDS_top
 (
@@ -382,7 +390,7 @@ DDS scope_DDS_top
 	.rst(reset_from_key),
 	.en(1'b1),
 	.data(LFSR[1:0]),
-	.mode({1'b1, dds_top_sel}),
+	.mode({1'b1, modulation_selector[2:0]}),
 	.fsk_phase_inc(dds_increment),
 	.wave(dds_top_out)
 );
@@ -395,17 +403,8 @@ fts_sync #(.N(12)) dds_top_out_syncro
 	.fastclk(CLOCK_50),
 	.slowclk(sampler)
 );
-stf_sync #(.N(3)) dds_top_sel_syncro
-(
-	.data(modulation_selector[2:0]),
-	.synced(dds_top_sel),
-	.fastclk(CLOCK_50),
-	.slowclk(sampler)
-);
 
 /*Instantiate DDS wrapper for bottom (raw)*/
-logic [1:0] 		dds_bot_data;
-logic [2:0] 		dds_bot_sel;
 logic signed [11:0] dds_bot_out;
 DDS scope_DDS_bot
 (
@@ -414,7 +413,7 @@ DDS scope_DDS_bot
 	.en(1'b1),
 	.data(2'b00),
 	.fsk_phase_inc(32'b0),
-	.mode({1'b0, dds_bot_sel}),
+	.mode({1'b0, signal_selector[2:0]}),
 	.wave(dds_bot_out)
 );
 
@@ -423,13 +422,6 @@ fts_sync #(.N(12)) dds_bot_out_syncro
 (
 	.data(dds_bot_out),
 	.synced(actual_selected_signal),
-	.fastclk(CLOCK_50),
-	.slowclk(sampler)
-);
-stf_sync #(.N(3)) dds_bot_sel_syncro
-(
-	.data(signal_selector[2:0]),
-	.synced(dds_bot_sel),
 	.fastclk(CLOCK_50),
 	.slowclk(sampler)
 );
@@ -579,6 +571,16 @@ Generate_LCD_scope_Clk(
 .div_clk_count(32'd70000),
 .Reset(1'h1));
 
+/*Synchronize graph_color*/
+logic [23:0] graph_color_sampler_sync;
+fts_sync #(.N(24)) graph_color_syncro
+(
+	.data(graph_color),
+	.synced(graph_color_sampler_sync),
+	.fastclk(CLOCK_50),
+	.slowclk(sampler)
+);
+
 //VGA Oscilloscope Modules
 plot_graph plot_graph1
 (
@@ -587,7 +589,7 @@ plot_graph plot_graph1
 	.data_graph({~actual_selected_modulation[11],actual_selected_modulation[10:4]}) ,	// input [size_data-1:0] data_graph_sig
 	.data_graph_rdy(sampler) ,	// input  data_graph_rdy_sig
 	.display_clk(video_clk_40Mhz) ,	// input  display_clk_sig
-	.color_graph(24'h00ff30) ,	// input [numberRGB-1:0] color_graph_sig
+	.color_graph(graph_color_sampler_sync) ,	// input [numberRGB-1:0] color_graph_sig
 	.scroll_en(graph_enable_scroll) ,	// input  scroll_en_sig
 	.Pos_X(11'd0) ,	// input [Xcount-1:0] Pos_X_sig
 	.Pos_Y(11'd266) ,	// input [Ycount-1:0] Pos_Y_sig
@@ -610,7 +612,7 @@ plot_graph plot_graph2
 	.data_graph({~actual_selected_signal[11],actual_selected_signal[10:4]}) ,	// input [size_data-1:0] data_graph_sig
 	.data_graph_rdy(sampler) ,	// input  data_graph_rdy_sig
 	.display_clk(video_clk_40Mhz) ,	// input  display_clk_sig
-	.color_graph(24'h00ff30) ,	// input [numberRGB-1:0] color_graph_sig
+	.color_graph(graph_color_sampler_sync) ,	// input [numberRGB-1:0] color_graph_sig
 	.scroll_en(graph_enable_scroll) ,	// input  scroll_en_sig
 	.Pos_X(11'd0) ,	// input [Xcount-1:0] Pos_X_sig
 	.Pos_Y(11'd438) ,	// input [Ycount-1:0] Pos_Y_sig

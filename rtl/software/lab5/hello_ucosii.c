@@ -101,10 +101,24 @@ void draw_button(int x, int y, int w, int h, int color, char * text,
 		char event_type, alt_video_display* display) {
 
 	vid_draw_box(x, y, x + w, y + h, BLACK_24, DO_FILL, display);
-	vid_draw_box(x, y, x + w, y + h, event_type ? ~color : color, DO_FILL,
-			display);
-	vid_print_string_alpha(x + w / 4, y + h / 8, WHITE_24,
-			event_type ? ~color : color, tahomabold_20, display, text);
+
+	switch (event_type) {
+		case 0:
+			vid_draw_box(x, y, x + w, y + h, color, DO_FILL, display);
+			vid_print_string_alpha(x + w / 4, y + h / 8, WHITE_24,
+			color, tahomabold_20, display, text);
+			break;
+		case 1:
+			vid_draw_box(x, y, x + w, y + h, ~color, DO_FILL, display);
+			vid_print_string_alpha(x + w / 4, y + h / 8, WHITE_24,
+			~color, tahomabold_20, display, text);
+			break;
+		case 2:
+			vid_draw_box(x, y, x + w, y + h, 0xFF9933, DO_FILL, display);
+			vid_print_string_alpha(x + w / 4, y + h / 8, WHITE_24,
+			0xFF9933, tahomabold_20, display, text);
+			break;
+	}
 
 }
 
@@ -143,6 +157,10 @@ void init_background() { // INIT BACKGROUND
 	draw_button(667, 470, 120, 35, 0xCC6600, "COS", 0, SW_Frame);
 	draw_button(667, 512, 120, 35, 0xCC6600, "SAW", 0, SW_Frame);
 	draw_button(667, 554, 120, 35, 0xCC6600, "SQUARE", 1, SW_Frame);
+
+	draw_button(667, 9, 120, 35, 0xff0000, "RED", 2, SW_Frame);
+	draw_button(667, 46, 120, 35, 0x00ff00, "GREEN", 0, SW_Frame);
+	draw_button(667, 83, 120, 35, 0x00ffff, "BLUE", 0, SW_Frame);
 
 }
 
@@ -376,6 +394,39 @@ if (event == 1) {	//down event
 		currentSong = (currentSong < SONG_COUNT - 1) ? currentSong + 1 : 0;
 	}
 
+	//Logic for color buttons
+
+	//RED
+	if (x_mouse >= 667 && x_mouse <= (667 + 120) && y_mouse >= 9
+			&& y_mouse <= (9 + 35)) {
+
+		draw_button(667, 9, 120, 35, 0xff0000, "SOVIET", 2, SW_Frame);
+		draw_button(667, 46, 120, 35, 0x00ff00, "ALIEN", 0, SW_Frame);
+		draw_button(667, 83, 120, 35, 0x00ffff, "EVO", 0, SW_Frame);
+
+		set_graph_color(0xff0000);
+	}
+	//GREEN
+	else if (x_mouse >= 667 && x_mouse <= (667 + 120) && y_mouse >= 46
+			&& y_mouse <= (46 + 35)) {
+
+		draw_button(667, 9, 120, 35, 0xff0000, "RED", 0, SW_Frame);
+		draw_button(667, 46, 120, 35, 0x00ff00, "GREEN", 2, SW_Frame);
+		draw_button(667, 83, 120, 35, 0x00ffff, "BLUE", 0, SW_Frame);
+
+		set_graph_color(0x00ff00);
+	}
+	//BLUE
+	else if (x_mouse >= 667 && x_mouse <= (667 + 120) && y_mouse >= 83
+			&& y_mouse <= (83 + 35)) {
+
+		draw_button(667, 9, 120, 35, 0xff0000, "RED", 0, SW_Frame);
+		draw_button(667, 46, 120, 35, 0x00ff00, "GREEN", 0, SW_Frame);
+		draw_button(667, 83, 120, 35, 0x00ffff, "BLUE", 2, SW_Frame);
+
+		set_graph_color(0x00ffff);
+	}
+
 }
 
 OSTimeDlyHMSM(0, 0, 0, 100);
@@ -401,6 +452,9 @@ audio_selector(1);
 //init selectors
 select_modulation(0);
 select_signal(3);
+
+//set initial color
+set_graph_color(0xff0000);
 
 //task song
 OSTaskCreateExt(task1,

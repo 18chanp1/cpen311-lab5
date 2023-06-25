@@ -11,9 +11,9 @@
 //audio fifo
 int audio_dac_wr_fifo(unsigned char muestra) ;
 int stop_wav();
-/*Esta función pone stop y pause en 0*/
+/*Esta funciï¿½n pone stop y pause en 0*/
 int play_wav();
-/*Esta función pone pause en 1, para pausar el archivo de audio*/
+/*Esta funciï¿½n pone pause en 1, para pausar el archivo de audio*/
 int pause_wav();
 //Audio controller sampling frequency
 int set_audio_frequency_audio_controller(int freq);
@@ -23,6 +23,8 @@ void select_modulation(unsigned char modulator);
 void select_signal(unsigned char signal);
 //audio selector
 void audio_selector(unsigned char audio_sel);
+//set graph color
+void set_graph_color(int color);
 //Audio Synthesis
 int set_note(int freq);
 //read keyboard
