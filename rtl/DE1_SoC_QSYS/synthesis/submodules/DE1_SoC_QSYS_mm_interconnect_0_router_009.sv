@@ -1,10 +1,10 @@
-// (C) 2001-2017 Intel Corporation. All rights reserved.
+// (C) 2001-2018 Intel Corporation. All rights reserved.
 // Your use of Intel Corporation's design tools, logic functions and other 
 // software and tools, and its AMPP partner logic functions, and any output 
-// files any of the foregoing (including device programming or simulation 
+// files from any of the foregoing (including device programming or simulation 
 // files), and any associated documentation or information are expressly subject 
 // to the terms and conditions of the Intel Program License Subscription 
-// Agreement, Intel MegaCore Function License Agreement, or other applicable 
+// Agreement, Intel FPGA IP License Agreement, or other applicable 
 // license agreement, including, without limitation, that your use is for the 
 // sole purpose of programming logic devices manufactured by Intel and sold by 
 // Intel or its authorized distributors.  Please refer to the applicable 
@@ -24,10 +24,10 @@
 // agreement for further details.
 
 
-// $Id: //acds/rel/16.1/ip/merlin/altera_merlin_router/altera_merlin_router.sv.terp#1 $
+// $Id: //acds/rel/18.1std/ip/merlin/altera_merlin_router/altera_merlin_router.sv.terp#1 $
 // $Revision: #1 $
-// $Date: 2016/08/07 $
-// $Author: swbranch $
+// $Date: 2018/07/18 $
+// $Author: psgswbuild $
 
 // -------------------------------------------------------
 // Merlin Router
@@ -50,9 +50,9 @@ module DE1_SoC_QSYS_mm_interconnect_0_router_009_default_decode
                DEFAULT_DESTID = 0 
    )
   (output [103 - 99 : 0] default_destination_id,
-   output [25-1 : 0] default_wr_channel,
-   output [25-1 : 0] default_rd_channel,
-   output [25-1 : 0] default_src_channel
+   output [26-1 : 0] default_wr_channel,
+   output [26-1 : 0] default_rd_channel,
+   output [26-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
@@ -63,7 +63,7 @@ module DE1_SoC_QSYS_mm_interconnect_0_router_009_default_decode
       assign default_src_channel = '0;
     end
     else begin : default_channel_assignment
-      assign default_src_channel = 25'b1 << DEFAULT_CHANNEL;
+      assign default_src_channel = 26'b1 << DEFAULT_CHANNEL;
     end
   endgenerate
 
@@ -73,8 +73,8 @@ module DE1_SoC_QSYS_mm_interconnect_0_router_009_default_decode
       assign default_rd_channel = '0;
     end
     else begin : default_rw_channel_assignment
-      assign default_wr_channel = 25'b1 << DEFAULT_WR_CHANNEL;
-      assign default_rd_channel = 25'b1 << DEFAULT_RD_CHANNEL;
+      assign default_wr_channel = 26'b1 << DEFAULT_WR_CHANNEL;
+      assign default_rd_channel = 26'b1 << DEFAULT_RD_CHANNEL;
     end
   endgenerate
 
@@ -103,7 +103,7 @@ module DE1_SoC_QSYS_mm_interconnect_0_router_009
     // -------------------
     output                          src_valid,
     output reg [117-1    : 0] src_data,
-    output reg [25-1 : 0] src_channel,
+    output reg [26-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
     input                           src_ready
@@ -119,7 +119,7 @@ module DE1_SoC_QSYS_mm_interconnect_0_router_009
     localparam PKT_PROTECTION_H = 107;
     localparam PKT_PROTECTION_L = 105;
     localparam ST_DATA_W = 117;
-    localparam ST_CHANNEL_W = 25;
+    localparam ST_CHANNEL_W = 26;
     localparam DECODER_TYPE = 1;
 
     localparam PKT_TRANS_WRITE = 70;
@@ -158,7 +158,7 @@ module DE1_SoC_QSYS_mm_interconnect_0_router_009
     assign src_valid         = sink_valid;
     assign src_startofpacket = sink_startofpacket;
     assign src_endofpacket   = sink_endofpacket;
-    wire [25-1 : 0] default_src_channel;
+    wire [26-1 : 0] default_src_channel;
 
 
 
@@ -190,11 +190,11 @@ module DE1_SoC_QSYS_mm_interconnect_0_router_009
 
 
         if (destid == 0 ) begin
-            src_channel = 25'b01;
+            src_channel = 26'b01;
         end
 
         if (destid == 1  && read_transaction) begin
-            src_channel = 25'b10;
+            src_channel = 26'b10;
         end
 
 

@@ -85,8 +85,14 @@ extern struct gimp_image_struct play_up;
 extern struct gimp_image_struct stop_down;
 extern struct gimp_image_struct stop_up;
 
-extern unsigned char song[];
-extern unsigned int size_song;
+/*Song Information*/
+#define SONG_COUNT 3
+extern unsigned char song0 [];
+extern unsigned char song1 [];
+extern unsigned char song2 [];
+unsigned char* songs[SONG_COUNT] = {song0, song1, song2};
+int song_len[SONG_COUNT] = {1320000, 1320000,1320000};
+
 // VARIABLES GLOBALES DE BOTONES
 unsigned char buttons_control1[12];
 unsigned char buttons_control2[12];
@@ -95,10 +101,24 @@ void draw_button(int x, int y, int w, int h, int color, char * text,
 		char event_type, alt_video_display* display) {
 
 	vid_draw_box(x, y, x + w, y + h, BLACK_24, DO_FILL, display);
-	vid_draw_box(x, y, x + w, y + h, event_type ? ~color : color, DO_FILL,
-			display);
-	vid_print_string_alpha(x + w / 4, y + h / 8, WHITE_24,
-			event_type ? ~color : color, tahomabold_20, display, text);
+
+	switch (event_type) {
+		case 0:
+			vid_draw_box(x, y, x + w, y + h, color, DO_FILL, display);
+			vid_print_string_alpha(x + w / 4, y + h / 8, WHITE_24,
+			color, tahomabold_20, display, text);
+			break;
+		case 1:
+			vid_draw_box(x, y, x + w, y + h, ~color, DO_FILL, display);
+			vid_print_string_alpha(x + w / 4, y + h / 8, WHITE_24,
+			~color, tahomabold_20, display, text);
+			break;
+		case 2:
+			vid_draw_box(x, y, x + w, y + h, 0xFF9933, DO_FILL, display);
+			vid_print_string_alpha(x + w / 4, y + h / 8, WHITE_24,
+			0xFF9933, tahomabold_20, display, text);
+			break;
+	}
 
 }
 
@@ -124,6 +144,9 @@ void init_background() { // INIT BACKGROUND
 	vid_draw_line(261, 262, 647, 262, 4, WHITE_24, SW_Frame);
 	vid_draw_line(261, 0, 800, 0, 4, WHITE_24, SW_Frame);
 
+	draw_button(667, 120, 120, 35, 0x0066CC, "PREV", 0, SW_Frame);
+	draw_button(667, 157, 120, 35, 0x0066CC, "NEXT", 0, SW_Frame);
+
 	draw_button(667, 194, 120, 35, 0x0066CC, "QPSK", 0, SW_Frame);
 	draw_button(667, 252, 120, 35, 0x0066CC, "ASK", 1, SW_Frame);
 	draw_button(667, 289, 120, 35, 0x0066CC, "FSK", 0, SW_Frame);
@@ -135,7 +158,17 @@ void init_background() { // INIT BACKGROUND
 	draw_button(667, 512, 120, 35, 0xCC6600, "SAW", 0, SW_Frame);
 	draw_button(667, 554, 120, 35, 0xCC6600, "SQUARE", 1, SW_Frame);
 
+	draw_button(667, 9, 120, 35, 0xff0000, "RED", 2, SW_Frame);
+	draw_button(667, 46, 120, 35, 0x00ff00, "GREEN", 0, SW_Frame);
+	draw_button(667, 83, 120, 35, 0x00ffff, "BLUE", 0, SW_Frame);
+
 }
+
+unsigned char play_song = 0;
+unsigned char pause_song = 0;
+unsigned char stop_song = 0;
+unsigned int currentSong = 0;
+int address_counter = 0;
 
 /*Read song from EPCS, and send it to the FIFO*/
 #define MAX_ADDRESS 524287
@@ -145,41 +178,37 @@ int i;
 for (i = 0; i < NUMERO_DE_MUESTRAS; i++) {
 while (audio_dac_fifo_full() == 1)
 ;
-audio_dac_wr_fifo( buf[i % size_song]);
+audio_dac_wr_fifo( buf[i % song_len[currentSong]]);
 }
 
 }
-
-unsigned char play_song = 0;
-unsigned char pause_song = 0;
-unsigned char stop_song = 0;
-
 
 int freq_reader = FREQ_READER_NOMINAL;
 
 /* Prints "Hello World" and sleeps for three seconds */
 void task1(void* pdata) // ANIMATION BY SOFTWARE TASK
 {
-int address_counter = 0;
-set_audio_frequency_audio_controller(freq_reader);
-while (1) {
+	
+	set_audio_frequency_audio_controller(freq_reader);
+	while (1) {
 
-if (play_song == 1) {
+		if (play_song == 1) {
 
-	send_audio_fifo(&song[address_counter % size_song]);
-	if (address_counter < size_song) {
-		address_counter += NUMERO_DE_MUESTRAS;
+			send_audio_fifo(&songs[currentSong][address_counter % song_len[currentSong]]);
+			if (address_counter < song_len[currentSong]) {
+				address_counter += NUMERO_DE_MUESTRAS;
 
-	} else {
-		address_counter = 0;
+			} else {
+				address_counter = 0;
+				currentSong = (currentSong < SONG_COUNT - 1) ? currentSong + 1 : 0;
+			}
+		} else if (pause_song == 1) {
+
+		} else if (stop_song == 1) {
+			address_counter = 0;
+		}
+		OSTimeDlyHMSM(0, 0, 0, 10);
 	}
-} else if (pause_song == 1) {
-
-} else if (stop_song == 1) {
-	address_counter = 0;
-}
-OSTimeDlyHMSM(0, 0, 0, 10);
-}
 
 }
 
@@ -349,6 +378,55 @@ if (event == 1) {	//down event
 		}
 		set_audio_frequency_audio_controller(freq_reader);
 	}
+
+	//Logic for the next and prev buttons
+	//Prev button
+	if (x_mouse >= 667 && x_mouse <= (667 + 120) && y_mouse >= 120
+			&& y_mouse <= (120 + 35)) {
+
+		address_counter = 0;
+		currentSong = (currentSong <= 0) ? SONG_COUNT - 1 : currentSong - 1;
+	}
+	// Next button
+	else if (x_mouse >= 667 && x_mouse <= (667 + 120) && y_mouse >= 157
+			&& y_mouse <= (157 + 35)) {
+		address_counter = 0;
+		currentSong = (currentSong < SONG_COUNT - 1) ? currentSong + 1 : 0;
+	}
+
+	//Logic for color buttons
+
+	//RED
+	if (x_mouse >= 667 && x_mouse <= (667 + 120) && y_mouse >= 9
+			&& y_mouse <= (9 + 35)) {
+
+		draw_button(667, 9, 120, 35, 0xff0000, "SOVIET", 2, SW_Frame);
+		draw_button(667, 46, 120, 35, 0x00ff00, "ALIEN", 0, SW_Frame);
+		draw_button(667, 83, 120, 35, 0x00ffff, "EVO", 0, SW_Frame);
+
+		set_graph_color(0xff0000);
+	}
+	//GREEN
+	else if (x_mouse >= 667 && x_mouse <= (667 + 120) && y_mouse >= 46
+			&& y_mouse <= (46 + 35)) {
+
+		draw_button(667, 9, 120, 35, 0xff0000, "RED", 0, SW_Frame);
+		draw_button(667, 46, 120, 35, 0x00ff00, "GREEN", 2, SW_Frame);
+		draw_button(667, 83, 120, 35, 0x00ffff, "BLUE", 0, SW_Frame);
+
+		set_graph_color(0x00ff00);
+	}
+	//BLUE
+	else if (x_mouse >= 667 && x_mouse <= (667 + 120) && y_mouse >= 83
+			&& y_mouse <= (83 + 35)) {
+
+		draw_button(667, 9, 120, 35, 0xff0000, "RED", 0, SW_Frame);
+		draw_button(667, 46, 120, 35, 0x00ff00, "GREEN", 0, SW_Frame);
+		draw_button(667, 83, 120, 35, 0x00ffff, "BLUE", 2, SW_Frame);
+
+		set_graph_color(0x00ffff);
+	}
+
 }
 
 OSTimeDlyHMSM(0, 0, 0, 100);
@@ -374,6 +452,9 @@ audio_selector(1);
 //init selectors
 select_modulation(0);
 select_signal(3);
+
+//set initial color
+set_graph_color(0xff0000);
 
 //task song
 OSTaskCreateExt(task1,

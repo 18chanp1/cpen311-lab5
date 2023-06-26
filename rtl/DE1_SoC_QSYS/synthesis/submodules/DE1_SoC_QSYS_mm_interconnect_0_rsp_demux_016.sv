@@ -1,20 +1,20 @@
-// (C) 2001-2017 Intel Corporation. All rights reserved.
+// (C) 2001-2018 Intel Corporation. All rights reserved.
 // Your use of Intel Corporation's design tools, logic functions and other 
 // software and tools, and its AMPP partner logic functions, and any output 
-// files any of the foregoing (including device programming or simulation 
+// files from any of the foregoing (including device programming or simulation 
 // files), and any associated documentation or information are expressly subject 
 // to the terms and conditions of the Intel Program License Subscription 
-// Agreement, Intel MegaCore Function License Agreement, or other applicable 
+// Agreement, Intel FPGA IP License Agreement, or other applicable 
 // license agreement, including, without limitation, that your use is for the 
 // sole purpose of programming logic devices manufactured by Intel and sold by 
 // Intel or its authorized distributors.  Please refer to the applicable 
 // agreement for further details.
 
 
-// $Id: //acds/rel/16.1/ip/merlin/altera_merlin_demultiplexer/altera_merlin_demultiplexer.sv.terp#1 $
+// $Id: //acds/rel/18.1std/ip/merlin/altera_merlin_demultiplexer/altera_merlin_demultiplexer.sv.terp#1 $
 // $Revision: #1 $
-// $Date: 2016/08/07 $
-// $Author: swbranch $
+// $Date: 2018/07/18 $
+// $Author: psgswbuild $
 
 // -------------------------------------
 // Merlin Demultiplexer
@@ -29,7 +29,7 @@
 // Generation parameters:
 //   output_name:         DE1_SoC_QSYS_mm_interconnect_0_rsp_demux_016
 //   ST_DATA_W:           117
-//   ST_CHANNEL_W:        25
+//   ST_CHANNEL_W:        26
 //   NUM_OUTPUTS:         1
 //   VALID_WIDTH:         1
 // ------------------------------------------
@@ -47,7 +47,7 @@ module DE1_SoC_QSYS_mm_interconnect_0_rsp_demux_016
     // -------------------
     input  [1-1      : 0]   sink_valid,
     input  [117-1    : 0]   sink_data, // ST_DATA_W=117
-    input  [25-1 : 0]   sink_channel, // ST_CHANNEL_W=25
+    input  [26-1 : 0]   sink_channel, // ST_CHANNEL_W=26
     input                         sink_startofpacket,
     input                         sink_endofpacket,
     output                        sink_ready,
@@ -57,7 +57,7 @@ module DE1_SoC_QSYS_mm_interconnect_0_rsp_demux_016
     // -------------------
     output reg                      src0_valid,
     output reg [117-1    : 0] src0_data, // ST_DATA_W=117
-    output reg [25-1 : 0] src0_channel, // ST_CHANNEL_W=25
+    output reg [26-1 : 0] src0_channel, // ST_CHANNEL_W=26
     output reg                      src0_startofpacket,
     output reg                      src0_endofpacket,
     input                           src0_ready,
@@ -94,7 +94,7 @@ module DE1_SoC_QSYS_mm_interconnect_0_rsp_demux_016
     // -------------------
     assign ready_vector[0] = src0_ready;
 
-    assign sink_ready = |(sink_channel & {{24{1'b0}},{ready_vector[NUM_OUTPUTS - 1 : 0]}});
+    assign sink_ready = |(sink_channel & {{25{1'b0}},{ready_vector[NUM_OUTPUTS - 1 : 0]}});
 
 endmodule
 

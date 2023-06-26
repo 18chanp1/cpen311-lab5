@@ -20,3 +20,5 @@ db/
 incremental_db/
 eclipse/
 .vscode/
+obj/
+.o

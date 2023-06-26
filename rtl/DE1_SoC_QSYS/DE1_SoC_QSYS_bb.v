@@ -13,9 +13,13 @@ module DE1_SoC_QSYS (
 	clk_clk,
 	clk_25_out_clk,
 	clk_sdram_clk,
+	color_graph_export,
+	dds_increment_out_export,
 	div_freq_export,
 	key_external_connection_export,
 	keyboard_keys_export,
+	lfsr_clk_interrupt_gen_in_export,
+	lfsr_val_in_export,
 	modulation_selector_export,
 	mouse_pos_export,
 	pll_locked_export,
@@ -39,10 +43,7 @@ module DE1_SoC_QSYS (
 	vga_alt_vip_itc_0_clocked_video_vid_f,
 	vga_alt_vip_itc_0_clocked_video_vid_h,
 	vga_alt_vip_itc_0_clocked_video_vid_v,
-	vga_vga_clk_clk,
-	lfsr_clk_interrupt_gen_in_export,
-	lfsr_val_in_export,
-	dds_increment_out_export);	
+	vga_vga_clk_clk);	
 
 	output	[31:0]	audio2fifo_0_data_divfrec_export;
 	input		audio2fifo_0_empty_export;
@@ -57,9 +58,13 @@ module DE1_SoC_QSYS (
 	input		clk_clk;
 	output		clk_25_out_clk;
 	output		clk_sdram_clk;
+	output	[23:0]	color_graph_export;
+	output	[31:0]	dds_increment_out_export;
 	output	[31:0]	div_freq_export;
 	input	[3:0]	key_external_connection_export;
 	input	[31:0]	keyboard_keys_export;
+	input		lfsr_clk_interrupt_gen_in_export;
+	input	[31:0]	lfsr_val_in_export;
 	output	[3:0]	modulation_selector_export;
 	input	[31:0]	mouse_pos_export;
 	output		pll_locked_export;
@@ -84,7 +89,4 @@ module DE1_SoC_QSYS (
 	output		vga_alt_vip_itc_0_clocked_video_vid_h;
 	output		vga_alt_vip_itc_0_clocked_video_vid_v;
 	output		vga_vga_clk_clk;
-	input		lfsr_clk_interrupt_gen_in_export;
-	input	[31:0]	lfsr_val_in_export;
-	output	[31:0]	dds_increment_out_export;
 endmodule
