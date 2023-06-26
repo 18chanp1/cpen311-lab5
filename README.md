@@ -58,12 +58,15 @@ Top DDS:
 ![./docs/dds_top/SignalTap/02.png](./docs/dds_top/SignalTap/02.png) 
 ![./docs/dds_top/SignalTap/03.png](./docs/dds_top/SignalTap/03.png) 
 ![./docs/dds_top/SignalTap/04.png](./docs/dds_top/SignalTap/04.png) 
+![05.png](./docs/dds_top/SignalTap/05.png)
+
 
 Bottom DDS:
 ![./docs/dds_bottom/SignalTap/01.png](./docs/dds_bottom/SignalTap/01.png) 
 ![./docs/dds_bottom/SignalTap/02.png](./docs/dds_bottom/SignalTap/02.png) 
 ![./docs/dds_bottom/SignalTap/03.png](./docs/dds_bottom/SignalTap/03.png) 
 ![./docs/dds_bottom/SignalTap/04.png](./docs/dds_bottom/SignalTap/04.png) 
+![05.png](./docs/dds_bottom/SignalTap/05.png)
 
 
 Synchronizers:
