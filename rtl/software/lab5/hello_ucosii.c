@@ -91,7 +91,7 @@ extern unsigned char song0 [];
 extern unsigned char song1 [];
 extern unsigned char song2 [];
 unsigned char* songs[SONG_COUNT] = {song0, song1, song2};
-int song_len[SONG_COUNT] = {1320000, 1320000,1320000};
+int song_len[SONG_COUNT] = {1320000, 2288000,2288000};
 
 // VARIABLES GLOBALES DE BOTONES
 unsigned char buttons_control1[12];
